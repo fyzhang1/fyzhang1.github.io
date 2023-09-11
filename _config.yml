@@ -3,7 +3,7 @@ description: writing and note-taking.
 author: Fuyao Zhang
 avatar: /image.png
 email: fyzhang1@stu.xidian.edu.cn
-location:
+location: 中国陕西省西安
 
 plugins:
   - jekyll-seo-tag
