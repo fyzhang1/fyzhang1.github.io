@@ -27,6 +27,9 @@ exclude:
   - README.md
   - jekyll-theme-hamilton.gemspec
 
+plugins:
+  - jekyll-theme-hamilton
+  
 # Jekyll SEO Tag (Optional)
 # =========================
 twitter:
