@@ -1,5 +1,5 @@
 ---
-layout: fyzhang1.github.io/paper
+layout: paper
 title: Years
 permalink: /years/
 ---
