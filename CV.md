@@ -7,7 +7,7 @@ permalink: /CV/
 ## Education
 
 - B.S. in School of Communications Engineering, Xidian University, Xi’an, China, 2021.09-2025.06
-- B.S. in Heriot-Watt University
+- B.S. in Heriot-Watt University, Scotland.
 
 
 
