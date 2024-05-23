@@ -1,5 +1,5 @@
 ---
-layout: test1
+layout: paper
 title: Years
 permalink: /years/
 ---
