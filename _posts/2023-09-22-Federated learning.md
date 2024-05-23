@@ -8,7 +8,7 @@
 
 FL中的非独立同分布（Non-Independent and Identically Distributed, 简称 Non-IID）数据是在FL中，不同客户端上的数据分布不一致会对模型训练准确度造成影响。
 
-## FL+chain
+## FL
 
 很多研究想通过将区块链和FL相结合解决传统FL还存在的一些问题：
 
