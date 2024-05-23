@@ -1,5 +1,5 @@
 ---
-layout: archive-years
+layout: paper
 title: Years
 permalink: /years/
 ---
