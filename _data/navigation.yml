@@ -6,6 +6,8 @@
   url: /categories/
 - title: Tags
   url: /tags/
+- title: CV
+  url: /CV/
 - title: More
   sublinks:
     - title: FAQ
