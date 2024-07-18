@@ -27,9 +27,9 @@ paginate: 10
 exclude:
   - scripts/
   - README.md
-  - jekyll-theme-hamilton.gemspec
+  - jekyll-theme-daylight.gemspec
 
-remote_theme: ngzhio/jekyll-theme-hamilton
+remote_theme: ngzhio/jekyll-theme-daylight
   
 # Jekyll SEO Tag (Optional)
 # =========================
