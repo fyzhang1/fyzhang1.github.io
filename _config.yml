@@ -4,6 +4,7 @@ author: Fuyao Zhang
 avatar: /image.jpg
 email: fyzhang1@stu.xidian.edu.cn
 location: 中国陕西省西安
+skin: daylight
 
 plugins:
   - jekyll-seo-tag
@@ -27,10 +28,10 @@ paginate: 10
 exclude:
   - scripts/
   - README.md
-  - jekyll-theme-daylight.gemspec
+  - jekyll-theme-hamilton.gemspec
 
-remote_theme: ngzhio/jekyll-theme-daylight
-skin: daylight
+remote_theme: ngzhio/jekyll-theme-hamilton
+
   
 # Jekyll SEO Tag (Optional)
 # =========================
