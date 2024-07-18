@@ -7,6 +7,7 @@ layout: home
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,16 +17,16 @@ layout: home
         }
         .container {
             max-width: 900px;
-            margin: auto;
-            padding: 10px;
+            margin: 20px auto;
+            padding: 20px;
             background-color: white;
-            margin-bottom: 10px;
-            border-radius: 10px;
+            border-radius: 6px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1 {
+        .section-title {
             text-align: center;
-            color: #333;
+            color: #0b79e3;
+            margin-bottom: 20px;
         }
         h2 {
             color: #0b79e3;
@@ -40,8 +41,11 @@ layout: home
         .timeline {
             position: relative;
             max-width: 900px;
-            margin: auto;
+            margin: 40px auto;
             padding: 20px 0;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .timeline::after {
             content: '';
@@ -69,7 +73,7 @@ layout: home
             content: '';
             position: absolute;
             width: 25px;
-            height: 5px;
+            height: 25px;
             right: -17px;
             background-color: white;
             border: 4px solid #0b79e3;
@@ -85,6 +89,7 @@ layout: home
             background-color: white;
             position: relative;
             border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .timeline-content h2 {
             margin-top: 0;
@@ -100,11 +105,24 @@ layout: home
         .timeline-content ul li {
             margin-bottom: 10px;
         }
+        @media screen and (max-width: 600px) {
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 60px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Resume</h1>
+        <h1 class="section-title">Resume</h1>
         <h2>Education</h2>
         <ul>
             <li>B.S. in School of Communications Engineering, Xidian University, Xi'an, China, 2021.09-2025.06</li>
@@ -168,3 +186,4 @@ layout: home
     </div>
 </body>
 </html>
+
