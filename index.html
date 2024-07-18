@@ -1,3 +1,171 @@
 ---
 layout: home
 ---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #0b79e3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px 0;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #0b79e3;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #0b79e3;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-container.right::after {
+            left: -16px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+        .timeline-content h2 {
+            margin-top: 0;
+            color: #0b79e3;
+        }
+        .timeline-content p {
+            margin: 5px 0;
+        }
+        .timeline-content ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        .timeline-content ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume</h1>
+        <h2>Education</h2>
+        <ul>
+            <li>B.S. in School of Communications Engineering, Xidian University, Xi'an, China, 2021.09-2025.06</li>
+            <li>B.S. in Herriot-Watt University, Scotland</li>
+        </ul>
+
+        <h2>Awards</h2>
+        <ul>
+            <li>Chinese National Scholarship 2021-2022</li>
+            <li>National Third Prize of Service Outsourcing Innovation and Entrepreneurship Competition 2022</li>
+            <li>Provincial Silver Prize of Shaan xi Provincial Entrepreneurship Program Competition for Youth Creation</li>
+            <li>National Bronze Award in China International College Students’ “Internet+” Innovation and Entrepreneurship Competition 2022</li>
+        </ul>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-container left">
+            <div class="timeline-content">
+                <h2>Visiting and Postdoctoral Scholar</h2>
+                <p>UC Berkeley</p>
+                <p>March 2023 – Present · California, USA</p>
+                <p>Research topics include:</p>
+                <ul>
+                    <li>Soft sensors</li>
+                    <li>Soft actuators</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-container right">
+            <div class="timeline-content">
+                <h2>Ph.D. in Data Science and Information Technology</h2>
+                <p>Tsinghua University</p>
+                <p>September 2019 – July 2024 · China</p>
+                <p>Research on self-powered sensors and soft robotics.</p>
+            </div>
+        </div>
+        <div class="timeline-container left">
+            <div class="timeline-content">
+                <h2>B.Eng. in Telecommunications Engineering</h2>
+                <p>Herriott-Watt University</p>
+                <p>August 2015 – June 2019 · Scotland, UK</p>
+                <p>Thesis - Motion Primitives Extraction in MIS Instrument Trajectories for Pattern Recognition</p>
+            </div>
+        </div>
+        <div class="timeline-container right">
+            <div class="timeline-content">
+                <h2>B.Eng. in Telecommunications Engineering</h2>
+                <p>Xidian University</p>
+                <p>August 2015 – June 2019 · China</p>
+                <p>Joint dual-degree programme with Herriot-Watt University</p>
+            </div>
+        </div>
+        <div class="timeline-container left">
+            <div class="timeline-content">
+                <h2>Visiting Student</h2>
+                <p>Boston University</p>
+                <p>July 2018 – August 2018 · Massachusetts, USA</p>
+                <p>English for STEM leaders</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
