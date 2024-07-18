@@ -30,6 +30,7 @@ exclude:
   - jekyll-theme-daylight.gemspec
 
 remote_theme: ngzhio/jekyll-theme-daylight
+skin: daylight
   
 # Jekyll SEO Tag (Optional)
 # =========================
