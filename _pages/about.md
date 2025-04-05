@@ -12,7 +12,7 @@ I am an undergraduate student at the School of Telecommunication Engineering of 
 
 
 ## Research
-1. **Fuyao Zhang**, Dan Wang, Chuyang Liang, [<u>"DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data"</u>](https://ieeexplore.ieee.org/document/10945069), *IEEE TrustCom-2024 (CCF C)*, Accepted, 2024.
+1. **Fuyao Zhang**, Dan Wang, Chuyang Liang, ["DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data"](https://ieeexplore.ieee.org/document/10945069), *IEEE TrustCom-2024 (CCF C)*, Accepted, 2024.
 
 
 
