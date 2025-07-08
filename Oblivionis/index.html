@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CAVALRY-V: A Large-Scale Generator Framework for Adversarial Attacks on Video MLLMs">
+  <meta name="keywords" content="Computer Vision, Deep Learning, Video MLLMs, Adversarial Attack">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAVALRY-V: Adversarial Attacks on Video MLLMs</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .hero .title, .hero .subtitle { color: white; }
+    
+    .figure-placeholder {
+      background: #f5f5f5;
+      border: 2px dashed #ddd;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      margin: 2rem 0;
+      font-size: 1.2rem;
+      color: #666;
+    }
+    
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .metric-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .metric-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #667eea;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .section-minimal {
+      padding: 3rem 0;
+    }
+    
+    .compact-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero is-medium">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1">CAVALRY-V</h1>
+          <h2 class="subtitle is-3">A Large-Scale Generator Framework for Adversarial Attacks on Video MLLMs</h2>
+          
+          <div class="is-size-4 mt-5">
+            <span class="author-block">
+              <a href="https://jiamingzhang94.github.io/" style="color: white;">Jiaming Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Rui Hu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Qing Guo</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Wei Yang Bryan Lim</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 mt-3">
+            <span><sup>1</sup>NTU</span> &nbsp;&nbsp;
+            <span><sup>2</sup>BJTU</span> &nbsp;&nbsp;
+            <span><sup>3</sup>A*STAR</span>
+          </div>
+
+          <div class="mt-5">
+            <a href="https://arxiv.org/abs/2507.00817" class="button is-light is-medium mr-3">
+              <span class="icon"><i class="ai ai-arxiv"></i></span>
+              <span>Paper</span>
+            </a>
+            <a href="https://github.com/jiamingzhang94/CAVALRY-V" class="button is-light is-medium mr-3">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+            <a href="https://entuedu-my.sharepoint.com/:u:/g/personal/jiaming_zhang_staff_main_ntu_edu_sg/EfUgYFlfewVJueEMYOWKz3gBW47d7YtIenwmHhLyVDEjRQ?e=rU1mHR" class="button is-light is-medium">
+              <span class="icon"><i class="fas fa-cube"></i></span>
+              <span>Models</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TL;DR Section -->
+<section class="section section-minimal has-background-light">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">🚀 TL;DR</h2>
+    </div>
+    
+    <div class="box">
+      <p class="is-size-4 has-text-centered compact-text">
+        We introduce <strong>CAVALRY-V</strong>, a novel framework for generating adversarial attacks against Video Multimodal Large Language Models (V-MLLMs). Our approach achieves <strong>22.8% average improvement</strong> over existing attacks across 7 state-of-the-art V-MLLMs including GPT-4.1 and Gemini 2.0.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract Section -->
+<section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">📄 What is CAVALRY-V?</h2>
+    </div>
+    
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <div class="content compact-text">
+          <p>
+            Video Multimodal Large Language Models (V-MLLMs) have shown impressive capabilities in temporal reasoning and cross-modal understanding, yet their vulnerability to adversarial attacks remains underexplored.
+          </p>
+          <p>
+            <strong>CAVALRY-V</strong> directly targets the critical interface between visual perception and language generation in V-MLLMs through two key innovations:
+          </p>
+          <ul>
+            <li><strong>Dual-objective loss function</strong> that simultaneously disrupts text generation and visual representations</li>
+            <li><strong>Two-stage generator training</strong> combining large-scale pre-training with specialized fine-tuning</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="column is-one-third">
+        <div class="box has-background-primary-light">
+          <h3 class="title is-4 has-text-centered">🎯 Target Models</h3>
+          <div class="compact-text">
+            <p><strong>Commercial:</strong></p>
+            <ul>
+              <li>GPT-4.1</li>
+              <li>Gemini 2.0</li>
+            </ul>
+            <p><strong>Open-source:</strong></p>
+            <ul>
+              <li>QwenVL-2.5</li>
+              <li>InternVL-2.5</li>
+              <li>LLaVA-Video</li>
+              <li>Aria</li>
+              <li>MiniCPM-o-2.6</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Results Section -->
+<section class="section section-minimal has-background-light">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">🎯 Key Results</h2>
+    </div>
+    
+    <div class="results-grid">
+      <div class="metric-card">
+        <div class="metric-number">22.8%</div>
+        <p class="is-size-5 has-text-weight-semibold">Average Improvement</p>
+        <p class="compact-text">Over best baseline attacks across 7 V-MLLMs</p>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-number">7</div>
+        <p class="is-size-5 has-text-weight-semibold">Target Models</p>
+        <p class="compact-text">Including GPT-4.1, Gemini 2.0, and 5 open-source</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Framework Overview Section -->
+<section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">🔧 Framework Overview</h2>
+      <p class="subtitle compact-text">Two-stage generator training with cross-modal disruption</p>
+    </div>
+    
+    <div class="figure-placeholder has-text-centered">
+        <figure>
+          <img src="static/images/framework.png" alt="Framework Architecture" style="max-width: 100%; height: auto;" />
+          <figcaption class="mt-2">Framework Architecture</figcaption>
+        </figure>
+      </div>
+    
+    <div class="columns is-multiline mt-5">
+      <div class="column is-half">
+        <div class="box">
+          <h3 class="title is-4">🎯 Cross-Modal Disruption</h3>
+          <ul class="compact-text">
+            <li><strong>Semantic Loss:</strong> Disrupts text generation</li>
+            <li><strong>Visual Loss:</strong> Corrupts visual representations</li>
+            <li><strong>Auxiliary Loss:</strong> Enhances transferability</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="box">
+          <h3 class="title is-4">⚡ Two-Stage Training</h3>
+          <ul class="compact-text">
+            <li><strong>Pre-training:</strong> LAION-400M foundation</li>
+            <li><strong>Visual Fine-tuning:</strong> LLaVA-Instruct-150K</li>
+            <li><strong>Temporal Fine-tuning:</strong> Video-MME</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Results Comparison Section -->
+<section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">📊 Main Results</h2>
+      <p class="subtitle compact-text">CAVALRY-V vs. baseline attacks on MMBench-Video</p>
+    </div>
+    
+    <div class="figure-placeholder has-text-centered">
+        <figure>
+          <img src="static/images/video_result.png" alt="Performance Comparison Chart" style="max-width: 100%; height: auto;" />
+          <figcaption class="mt-2">
+            <strong>Lower scores = more successful attacks</strong><br />
+            <!-- <small>Lower scores = more successful attacks</small> -->
+          </figcaption>
+        </figure>
+      </div>
+      
+    
+
+  </div>
+</section>
+
+<!-- Further Analysis Section -->
+<section class="section section-minimal has-background-light">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">🔬 Further Analysis</h2>
+      <p class="subtitle compact-text">Attack Mechanism Analysis</p>
+    </div>
+    
+<!-- Ablation Figure -->
+<div class="figure-placeholder has-text-centered">
+    <figure>
+      <img src="static/images/analysis.png" alt="Further Analysis Results" style="max-width: 100%; height: auto;" />
+      <figcaption class="mt-2">
+        <strong>Further Analysis Results</strong><br />
+        <em> </em>
+      </figcaption>
+    </figure>
+  </div>
+  
+    
+    <!-- Key Findings Box -->
+    <div class="box mt-5">
+      <h3 class="title is-4 has-text-centered">🎯 Key Findings</h3>
+      <div class="compact-text">
+        <div class="columns">
+          <div class="column">
+            <strong>🔍 Visual Misidentification (A1)</strong><br>
+            Mercedes-Benz misidentified as Fiat, demonstrating incorrect object recognition under adversarial perturbation
+          </div>
+          <div class="column">
+            <strong>🧠 Reasoning Disruption (A2-A3)</strong><br>
+            Accurate visual perception but contextually incorrect answers, showing disrupted visual-language connection
+          </div>
+          <div class="column">
+            <strong>💡 Knowledge-Based Resistance (A4)</strong><br>
+            Attack fails when answers rely on stored knowledge rather than visual evidence (non-Newtonian fluids)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">✨ Key Features</h2>
+    </div>
+    
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="has-text-primary mb-3">
+          <i class="fas fa-crosshairs fa-2x"></i>
+        </div>
+        <h3 class="title is-5">Universal Attack</h3>
+        <p class="compact-text">Works on both image and video MLLMs</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="has-text-primary mb-3">
+          <i class="fas fa-bolt fa-2x"></i>
+        </div>
+        <h3 class="title is-5">Efficient Generation</h3>
+        <p class="compact-text">Single forward pass, no iterative optimization</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="has-text-primary mb-3">
+          <i class="fas fa-share-alt fa-2x"></i>
+        </div>
+        <h3 class="title is-5">Cross-Model Transfer</h3>
+        <p class="compact-text">Effective across different architectures</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Citation Section -->
+<section class="section section-minimal has-background-light">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-5">
+      <h2 class="title is-2">📄 Citation</h2>
+    </div>
+    
+    <div class="box">
+      <pre><code>@article{zhang2025cavalry,
+  title={CAVALRY-V: A Large-Scale Generator Framework for Adversarial Attacks on Video MLLMs},
+  author={Zhang, Jiaming and Hu, Rui and Guo, Qing and Lim, Wei Yang Bryan},
+  journal={arXiv preprint arXiv:2507.00817},
+  year={2025}
+}</code></pre>
+    </div>
+    
+    <div class="has-text-centered mt-5">
+      <a href="https://github.com/jiamingzhang94/CAVALRY-V" class="button is-primary is-large">
+        <span class="icon"><i class="fab fa-github"></i></span>
+        <span>Get Started</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>© 2025 CAVALRY-V Project</p>
+  </div>
+</footer>
+
+</body>
+</html> 
