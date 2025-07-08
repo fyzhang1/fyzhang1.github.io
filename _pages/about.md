@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-<!-- ## Hi, I am Fuyao Zhang (张富尧) -->
+<!-- ## Hi, I am Fuyao Zhang (张富尧) 
 I am an undergraduate student at the School of Telecommunication Engineering of Xidian University, supervised by Prof Wang Dan. From 2024 to 2025, I am an exchange student at Heriot-Watt University, United Kingdom.
 
 
@@ -19,4 +19,4 @@ I am an undergraduate student at the School of Telecommunication Engineering of 
 ## Honors & Awards
 - National Scholarship, China, 2022 (<1%)
 - National Scholarship, China, 2023 (<1%)
-- Outstanding of National Innovation and Entrepreneurship Training Program for Undergraduates, China, 2023
+- Outstanding of National Innovation and Entrepreneurship Training Program for Undergraduates, China, 2023-->
