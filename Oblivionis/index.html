@@ -18,7 +18,15 @@
       color: white;
     }
     .hero .title, .hero .subtitle { color: white; }
-    
+    .custom-title {
+              font-family: 'Montserrat', sans-serif;
+              font-weight: 800;
+              font-style: italic;
+              font-size: 5rem;
+              color: #ffffff;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
     .figure-placeholder {
       background: #f5f5f5;
       border: 2px dashed #ddd;
@@ -99,18 +107,20 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1">Oblivionis</h1>
+          <!-- <h1 class="title is-1">Oblivionis</h1> -->
+           <!-- <h1 class="title is-1" style="font-style: italic;">Oblivionis</h1> -->
+          <h1 class="title is-1 custom-title">Oblivionis</h1>
           <h2 class="subtitle is-3">A Lightweight Learning and Unlearning Framework for Federated Large Language Models</h2>
           
           <div class="is-size-4 mt-5">
             <span class="author-block">
-              <a href="#" style="color: white;">Fuyao Zhang</a><sup>1</sup>,</span>
+              <a href="#" style="color: white;">Fuyao Zhang</a><sup>*1</sup>,</span>
             <span class="author-block">
-              <a href="#" style="color: white;">Xinyu Yan</a><sup>1</sup>,</span>
+              <a href="#" style="color: white;">Xinyu Yan</a><sup>*1</sup>,</span>
             <span class="author-block">
               <a href="#" style="color: white;">Tiantong Wu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#" style="color: white;">Wenjie Li</a><sup>2</sup>,</span>
+              <a href="#" style="color: white;">Wenjie Li</a><sup>1, 2</sup>,</span>
             <span class="author-block">
               <a href="#" style="color: white;">Tianxiang Chen</a><sup>3</sup>,</span>
             <span class="author-block">
@@ -120,7 +130,7 @@
             <span class="author-block">
               <a href="#" style="color: white;">Longtao Huang</a><sup>5</sup>,</span>
             <span class="author-block">
-              <a href="#" style="color: white;">Wei Yang Bryan Lim*</a><sup>1</sup>,</span>
+              <a href="#" style="color: white;">Wei Yang Bryan Lim</a><sup>✦1</sup>,</span>
             <span class="author-block">
               <a href="#" style="color: white;">Qiang Yang</a><sup>6</sup></span>
           </div>
@@ -139,7 +149,7 @@
               <span class="icon"><i class="ai ai-arxiv"></i></span>
               <span>Paper</span>
             </a>
-            <a href="" class="button is-light is-medium mr-3">
+            <a href="https://github.com/fyzhang1/Oblivionis" class="button is-light is-medium mr-3">
               <span class="icon"><i class="fab fa-github"></i></span>
               <span>Code</span>
             </a>
@@ -168,6 +178,30 @@
       </p>
     </div>
   </div>
+</section>
+
+<section class="section section-minimal">
+    <div class="container is-max-desktop">
+ <div class="box mt-5">
+      <h3 class="title is-4 has-text-centered">🎯 Three Key Objectives</h3>
+      <div class="compact-text">
+        <div class="columns"> 
+          <div class="column">
+            <strong>🎖️ Effectiveness </strong><br>
+            Selectively removing all influences of a client's local private data from the global model
+          </div>
+          <div class="column">
+            <strong>✨ Robustness </strong><br>
+            Ensuring the model maintains high utility on retained data
+          </div>
+          <div class="column">
+            <strong>💡 Lightweight Design </strong><br>
+            Enabling unlearning with minimal computational resources and model parameters
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 </section>
 
 <!-- Abstract Section -->
@@ -212,8 +246,8 @@
             </ul>
           </div>
         </div>
-      </div> -->
-    <!-- </div>
+      </div>
+     </div>
   </div>
 </section> -->
 
@@ -270,7 +304,7 @@
     <div class="columns is-multiline mt-5">
       <div class="column is-half">
         <div class="box">
-          <h3 class="title is-4">🎯 Federated Fine-tuning</h3>
+          <h3 class="title is-4">✅ Federated Fine-tuning</h3>
           <ul class="compact-text">
             <!-- <li><strong>Semantic Loss:</strong> Disrupts text generation</li>
             <li><strong>Visual Loss:</strong> Corrupts visual representations</li>
@@ -281,7 +315,7 @@
       
       <div class="column is-half">
         <div class="box">
-          <h3 class="title is-4">⚡ Federated Targeted Unlearning</h3>
+          <h3 class="title is-4">✅ Federated Targeted Unlearning</h3>
           <ul class="compact-text">
             <!-- <li><strong>Pre-training:</strong> LAION-400M foundation</li>
             <li><strong>Visual Fine-tuning:</strong> LLaVA-Instruct-150K</li>
@@ -342,10 +376,12 @@
       <img src="images/rouge.png" alt="Further Analysis Results" style="max-width: 100%; height: auto;" />
       <figcaption class="mt-2">
         <strong>Further Analysis Results</strong><br />
+          <strong>For more experimental details, please refer to our technical report</strong>
         <em> </em>
       </figcaption>
     </figure>
   </div>
+
     
     <!-- Key Findings Box -->
     <!-- <div class="box mt-5">
