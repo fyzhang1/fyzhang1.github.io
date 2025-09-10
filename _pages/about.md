@@ -41,13 +41,14 @@ TrustCom 2024
 
 ## 🎖️ Awards
 
-- 2022 Chinese National Scholarship
-- 2023 Chinese National Scholarship
+- 2022 Chinese National Scholarship (<1%)
+- 2023 Chinese National Scholarship (<1%)
 - 2023 Outstanding National Innovation and Entrepreneurship Training Program for College Students
 
 ## ⭐️ Services
 
 - Reviewer: TMC, TrushCom2024, Globecom2025
+
 
 
 
