@@ -7,16 +7,54 @@ redirect_from:
   - /about.html
 ---
 
-<!-- ## Hi, I am Fuyao Zhang (张富尧) 
-I am an undergraduate student at the School of Telecommunication Engineering of Xidian University, supervised by Prof Wang Dan. From 2024 to 2025, I am an exchange student at Heriot-Watt University, United Kingdom.
+## Hi, I am Fuyao Zhang (张富尧) 
+I am currently a Research Assistant at Nanyang Technological University (NTU), advised by Prof. Wei Yang Bryan Lim. Prior to joining NTU, i received my bachelor's degree in 2025 from Xidian University under the supervision of Prof. Dan Wang. My research interests include federated learning, LLM, and AI safety.
+
+
 
 
 ## Research
-1. **Fuyao Zhang**, Dan Wang, Chuyang Liang, [<font color="green">"DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data"</font>](https://ieeexplore.ieee.org/document/10945069), *IEEE TrustCom-2024 (CCF C)*, Accepted, 2024.
+
+<font color="green"> **Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models** </font>
+
+**Fuyao Zhang#**,  Xinyu Yan#, Tiantong Wu, Wenjie Li, Tianxiang Chen, Yang Cao, Ran Yan, Longtao Huang, Wei Yang Bryan Lim†, Qiang Yang
+
+preprint 2025
 
 
 
-## Honors & Awards
-- National Scholarship, China, 2022 (<1%)
-- National Scholarship, China, 2023 (<1%)
-- Outstanding of National Innovation and Entrepreneurship Training Program for Undergraduates, China, 2023-->
+<font color="green"> **Verifiably Forgotten? Gradient Differences Still Enable Data Reconstruction in Federated Unlearning** </font>
+
+**Fuyao Zhang**, Wenjie Li, Yurong Hao, Xinyu Yan, Yang Cao, Wei Yang Bryan Lim
+
+preprint 2025
+
+
+
+<font color="green"> **Ground-Assisted LEO Satellite Federated Learning: Dynamic, Efficient, Distributed learning** </font>
+
+**Fuyao Zhang**, Dan Wang, Jiawen Kang, Dusit Niyato
+
+IEEE Transactions on Mobile Computing 2025
+
+
+
+<font color="green">**DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data**</font>. 
+
+**Fuyao Zhang**, Dan Wang, Chuyang Liang
+
+TrustCom 2024.
+
+
+
+
+## 🎖️ Awards
+
+- 2022 Chinese National Scholarship
+- 2023 Chinese National Scholarship
+- 2023 Outstanding National Innovation and Entrepreneurship Training Program for College Students
+
+## ⭐️ Services
+
+- Reviewer: TMC, TrushCom2024, Globecom2025
+
