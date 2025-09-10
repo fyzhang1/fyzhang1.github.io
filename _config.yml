@@ -22,12 +22,12 @@ repository               : "fyzhang1/fyzhang1.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "bio-photo.jpg"
+  avatar           : "me.jepg"
   name             : "Fuyao Zhang"
   pronouns         : # example: "she/her"  
   bio              : "Email: hi.fyzhang@gmail.com"
   location         : "Edinburgh"
-  employer         : "Xidian University"
+  employer         : "Nanyang Technological University"
   uri              : # URL
   email            : "hi.fyzhang@gmail.com" 
 
