@@ -16,25 +16,25 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 
 <font color="green"> Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models </font>
 **Fuyao Zhang#**,  Xinyu Yan#, Tiantong Wu, Wenjie Li, Tianxiang Chen, Yang Cao, Ran Yan, Longtao Huang, Wei Yang Bryan Lim†, Qiang Yang
-preprint 2025
+[preprint 2025]
 
 
 
 <font color="green"> Verifiably Forgotten? Gradient Differences Still Enable Data Reconstruction in Federated Unlearning </font>
 **Fuyao Zhang**, Wenjie Li, Yurong Hao, Xinyu Yan, Yang Cao, Wei Yang Bryan Lim
-preprint 2025
+[preprint 2025]
 
 
 
 <font color="green"> Ground-Assisted LEO Satellite Federated Learning: Dynamic, Efficient, Distributed learning </font>
 **Fuyao Zhang**, Dan Wang, Jiawen Kang, Dusit Niyato
-IEEE Transactions on Mobile Computing 2025
+[IEEE Transactions on Mobile Computing 2025]
 
 
 
 <font color="green"> DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data </font>. 
 **Fuyao Zhang**, Dan Wang, Chuyang Liang
-TrustCom 2024.
+[TrustCom 2024]
 
 
 
@@ -48,5 +48,6 @@ TrustCom 2024.
 ## ⭐️ Services
 
 - Reviewer: TMC, TrushCom2024, Globecom2025
+
 
 
