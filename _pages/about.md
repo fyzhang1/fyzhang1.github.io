@@ -19,24 +19,20 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 *preprint 2025* 
 [paper](https://www.arxiv.org/abs/2508.08875) | [Code](https://github.com/fyzhang1/Oblivionis) | [Website](https://fyzhang1.github.io/Oblivionis/)
 
-
-
 <font color="green"> Verifiably Forgotten? Gradient Differences Still Enable Data Reconstruction in Federated Unlearning </font>
 **Fuyao Zhang**, Wenjie Li, Yurong Hao, Xinyu Yan, Yang Cao, Wei Yang Bryan Lim <br>
 *preprint 2025*
-
-
+[paper](https://arxiv.org/abs/2505.11097) | [Code](https://github.com/fyzhang1/IGF)
 
 <font color="green"> Ground-Assisted LEO Satellite Federated Learning: Dynamic, Efficient, Distributed learning </font>
 **Fuyao Zhang**, Dan Wang, Jiawen Kang, Dusit Niyato <br>
 *IEEE Transactions on Mobile Computing 2025*
-
-
+[paper](https://ieeexplore.ieee.org/abstract/document/11112763/)
 
 <font color="green"> DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data </font>
 **Fuyao Zhang**, Dan Wang, Chuyang Liang <br>
 *TrustCom 2024*
-
+[paper](https://ieeexplore.ieee.org/abstract/document/10945069)
 
 
 
@@ -52,6 +48,7 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 
 ----------------------------------------------------------
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=500&t=n&d=sXVjKDH_Cuvpclo_IYQa7hJSTUmYJUxdF1saR9e61z8&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
+
 
 
 
