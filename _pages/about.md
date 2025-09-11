@@ -50,7 +50,8 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 - Reviewer: TMC, TrushCom2024, Globecom2025
 
 ----------------------------------------------------------
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=sXVjKDH_Cuvpclo_IYQa7hJSTUmYJUxdF1saR9e61z8&cl=ffffff&w=a"></script>
+<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=202&t=n&d=sXVjKDH_Cuvpclo_IYQa7hJSTUmYJUxdF1saR9e61z8&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
+
 
 
 
