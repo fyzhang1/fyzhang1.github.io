@@ -16,7 +16,8 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 
 <font color="green"> Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models </font>
 **Fuyao Zhang#**,  Xinyu Yan#, Tiantong Wu, Wenjie Li, Tianxiang Chen, Yang Cao, Ran Yan, Longtao Huang, Wei Yang Bryan Lim†, Qiang Yang <br>
-*preprint 2025*
+*preprint 2025* 
+[paper](https://www.arxiv.org/abs/2508.08875) | [Code](https://github.com/fyzhang1/Oblivionis) | [Website](https://fyzhang1.github.io/Oblivionis/)
 
 
 
@@ -51,6 +52,7 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 
 ----------------------------------------------------------
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=500&t=n&d=sXVjKDH_Cuvpclo_IYQa7hJSTUmYJUxdF1saR9e61z8&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
+
 
 
 
