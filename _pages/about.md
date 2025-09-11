@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a Research Assistant at Nanyang Technological University (NTU), advised by Prof. Wei Yang Bryan Lim. Prior to joining NTU, I received my bachelor's degree in 2025 from Xidian University under the supervision of Prof. Dan Wang. My research interests include federated learning, LLM, and AI safety.
+I am currently a Research Assistant at Nanyang Technological University (NTU), advised by Prof. Wei Yang Bryan Lim. Prior to joining NTU, I received my bachelor's degree in 2025 from Xidian University under the supervision of Prof. Dan Wang. During this time, I also spent a year as an exchange student at Heriot-Watt University, United Kingdom. My research interests include federated learning, LLM, and AI safety.
 
 
 
@@ -48,6 +48,7 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 
 ----------------------------------------------------------
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=500&t=n&d=sXVjKDH_Cuvpclo_IYQa7hJSTUmYJUxdF1saR9e61z8&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
+
 
 
 
