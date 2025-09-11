@@ -41,8 +41,8 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 
 ## 🎖️ Awards
 
-- 2022 Chinese National Scholarship (<1%)
-- 2023 Chinese National Scholarship (<1%)
+- 2022 China National Scholarship (<1%)
+- 2023 China National Scholarship (<1%)
 - 2023 Outstanding National Innovation and Entrepreneurship Training Program for College Students
 
 ## ⭐️ Services
@@ -51,6 +51,7 @@ I am currently a Research Assistant at Nanyang Technological University (NTU), a
 
 ----------------------------------------------------------
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=500&t=n&d=sXVjKDH_Cuvpclo_IYQa7hJSTUmYJUxdF1saR9e61z8&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
+
 
 
 
