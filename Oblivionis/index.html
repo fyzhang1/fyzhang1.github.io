@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models">
+<!--   <meta name="keywords" content="Computer Vision, Deep Learning, Video MLLMs, Adversarial Attack">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <title>Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .hero .title, .hero .subtitle { color: white; }
+    .custom-title {
+              font-family: 'Montserrat', sans-serif;
+              font-weight: 800;
+              font-style: italic;
+              font-size: 5rem;
+              color: #ffffff;
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+
+    .figure-placeholder {
+      background: #f5f5f5;
+      border: 2px dashed #ddd;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      margin: 2rem 0;
+      font-size: 1.2rem;
+      color: #666;
+    }
+    
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .metric-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .metric-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #667eea;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .section-minimal {
+      padding: 3rem 0;
+    }
+    
+    .compact-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero is-medium">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- <h1 class="title is-1">Oblivionis</h1> -->
+           <!-- <h1 class="title is-1" style="font-style: italic;">Oblivionis</h1> -->
+          <h1 class="title is-1 custom-title">Oblivionis</h1>
+          <h2 class="subtitle is-3">A Lightweight Learning and Unlearning Framework for Federated Large Language Models</h2>
+          
+          <div class="is-size-4 mt-5">
+            <span class="author-block">
+              <a href="#" style="color: white;">Fuyao Zhang</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Xinyu Yan</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Tiantong Wu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Wenjie Li</a><sup>1, 2</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Tianxiang Chen</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Yang Cao</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Ran Yan</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Longtao Huang</a><sup>5</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Wei Yang Bryan Lim</a><sup>✦1</sup>,</span>
+            <span class="author-block">
+              <a href="#" style="color: white;">Qiang Yang</a><sup>6</sup></span>
+          </div>
+
+          <div class="is-size-5 mt-3">
+            <span><sup>1</sup>Nanyang Technological University</span> &nbsp;&nbsp;
+            <span><sup>2</sup>Hebei Normal University</span> &nbsp;&nbsp;
+            <span><sup>3</sup>Beihang University</span> &nbsp;&nbsp;
+            <span><sup>4</sup>Institute of Science Tokyo</span> &nbsp;&nbsp;
+            <span><sup>5</sup>Alibaba Group</span> &nbsp;&nbsp;
+            <span><sup>6</sup>Hong Kong Polytechnic University</span>
+          </div>
+
+          <div class="mt-5">
+            <a href="https://arxiv.org/abs/2508.08875" class="button is-light is-medium mr-3">
+              <span class="icon"><i class="ai ai-arxiv"></i></span>
+              <span>Paper</span>
+            </a>
+            <a href="https://github.com/fyzhang1/Oblivionis" class="button is-light is-medium mr-3">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+            <!-- <a href="" class="button is-light is-medium">
+              <span class="icon"><i class="fas fa-cube"></i></span>
+              <span>Models</span>
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TL;DR Section -->
+<section class="section section-minimal">
+
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">🚀 What is Oblivionis?</h2>
+    </div>
+    
+   <div class="box">
+      <p class="is-size-4 has-text-centered compact-text">
+        We introduce <strong>Oblivionis</strong>, a lightweight framework that integrates federated learning and targeted unlearning for LLMs, formulating them as a joint multi-objective optimization task to enable privacy-preserving training and compliance with GDPR's right to be forgotten.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-minimal">
+    <div class="container is-max-desktop">
+ <div class="box mt-5">
+      <h3 class="title is-4 has-text-centered">🎯 Three Key Objectives</h3>
+      <div class="compact-text">
+        <div class="columns"> 
+          <div class="column">
+            <strong>🎖️ Effectiveness </strong><br>
+            Selectively removing all influences of a client's local private data from the global model
+          </div>
+          <div class="column">
+            <strong>✨ Robustness </strong><br>
+            Ensuring the model maintains high utility on retained data
+          </div>
+          <div class="column">
+            <strong>💡 Lightweight Design </strong><br>
+            Enabling unlearning with minimal computational resources and model parameters
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
+<!-- Abstract Section -->
+<!-- <section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">Oblivionis</h2>
+    </div>
+    
+    <div class="section section-minimal">
+      <div class="container is-max-desktop">
+        <div class="has-text-centered mb-6">
+          <p>
+             A lightweight framework that integrates federated learning and targeted unlearning for LLMs, formulating them as a joint multi-objective optimization task to enable privacy-preserving training and compliance with GDPR's right to be forgotten.
+          </p>
+          <p>
+            <strong>CAVALRY-V</strong> directly targets the critical interface between visual perception and language generation in V-MLLMs through two key innovations:
+          </p>
+          <ul>
+            <li><strong>Dual-objective loss function</strong> that simultaneously disrupts text generation and visual representations</li>
+            <li><strong>Two-stage generator training</strong> combining large-scale pre-training with specialized fine-tuning</li>
+          </ul>
+        </div>
+      </div> -->
+      
+      <!-- <div class="column is-one-third">
+        <div class="box has-background-primary-light">
+          <h3 class="title is-4 has-text-centered">🎯 Target Models</h3>
+          <div class="compact-text">
+            <p><strong>Commercial:</strong></p>
+            <ul>
+              <li>GPT-4.1</li>
+              <li>Gemini 2.0</li>
+            </ul>
+            <p><strong>Open-source:</strong></p>
+            <ul>
+              <li>QwenVL-2.5</li>
+              <li>InternVL-2.5</li>
+              <li>LLaVA-Video</li>
+              <li>Aria</li>
+              <li>MiniCPM-o-2.6</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</section> -->
+
+<!-- Key Results Section -->
+<section class="section section-minimal has-background-light">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">🎯 We support</h2>
+    </div>
+    
+    <div class="results-grid">
+      <div class="metric-card">
+        <div class="metric-number">6</div>
+        <p class="is-size-5 has-text-weight-semibold">Federated Learning Methods</p>
+        <p class="compact-text">FedAv, FedProx, FedAdagrad, FedAdam, FedYogi</p>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-number">5</div>
+        <p class="is-size-5 has-text-weight-semibold"> Unlearning Methods</p>
+        <p class="compact-text">GradAscent, GradDiff, NPO, SimNPO, Retrain</p>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-number">10+</div>
+        <p class="is-size-5 has-text-weight-semibold">Metrics</p>
+        <p class="compact-text">Including Probability, ROUGE-L, Truth Ratio, and other 10+ metrics</p>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-number">6</div>
+        <p class="is-size-5 has-text-weight-semibold">Datasets</p>
+        <p class="compact-text">Including TOFU: Forget, Retain, Real Author, Word Fact; MUSE: Books, News</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Framework Overview Section -->
+<section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">🔧 Framework Overview</h2>
+      <!-- <p class="subtitle compact-text">Two-stage generator training with cross-modal disruption</p> -->
+    </div>
+    
+    <div class="figure-placeholder has-text-centered">
+        <figure>
+          <img src="images/framework.png" alt="Framework Architecture" style="max-width: 100%; height: auto;" />
+          <figcaption class="mt-2">Framework Architecture</figcaption>
+        </figure>
+      </div>
+    
+    <div class="columns is-multiline mt-5">
+      <div class="column is-half">
+        <div class="box">
+          <h3 class="title is-4">✅ Federated Fine-tuning</h3>
+          <ul class="compact-text">
+            <!-- <li><strong>Semantic Loss:</strong> Disrupts text generation</li>
+            <li><strong>Visual Loss:</strong> Corrupts visual representations</li>
+            <li><strong>Auxiliary Loss:</strong> Enhances transferability</li> -->
+          </ul>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="box">
+          <h3 class="title is-4">✅ Federated Targeted Unlearning</h3>
+          <ul class="compact-text">
+            <!-- <li><strong>Pre-training:</strong> LAION-400M foundation</li>
+            <li><strong>Visual Fine-tuning:</strong> LLaVA-Instruct-150K</li>
+            <li><strong>Temporal Fine-tuning:</strong> Video-MME</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Results Comparison Section -->
+<section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">📊 Main Results</h2>
+      <!-- <p class="subtitle compact-text">CAVALRY-V vs. baseline attacks on MMBench-Video</p> -->
+    </div>
+    
+    <div class="figure-placeholder has-text-centered">
+        <figure>
+          <img src="images/exp_result.jpg" alt="Performance Comparison Chart" style="max-width: 100%; height: auto;" />
+          <figcaption class="mt-2">
+            <strong>Evaluated on metrics MU (Model Utility) and FTR (Forget Truth Ratio)</strong><br />
+            <!-- <small>Lower scores = more successful attacks</small> -->
+          </figcaption>
+        </figure>
+      </div>
+      
+    
+
+  </div>
+</section>
+
+<!-- Further Analysis Section -->
+<section class="section section-minimal has-background-light">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">🔬 Further Analysis</h2>
+      <!-- <p class="subtitle compact-text">Attack Mechanism Analysis</p> -->
+    </div>
+    
+<!-- Ablation Figure -->
+<div class="figure-placeholder has-text-centered">
+    <figure>
+      <img src="images/prob.png" alt="Further Analysis Results" style="max-width: 100%; height: auto;" />
+      <figcaption class="mt-2">
+        <!-- <strong>Further Analysis Results</strong><br /> -->
+        <em> </em>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="figure-placeholder has-text-centered">
+    <figure>
+      <img src="images/rouge.png" alt="Further Analysis Results" style="max-width: 100%; height: auto;" />
+      <figcaption class="mt-2">
+        <strong>Further Analysis Results</strong><br />
+          <strong>For more experimental details, please refer to our technical report</strong>
+        <em> </em>
+      </figcaption>
+    </figure>
+  </div>
+
+    
+    <!-- Key Findings Box -->
+    <!-- <div class="box mt-5">
+      <h3 class="title is-4 has-text-centered">🎯 Key Findings</h3>
+      <div class="compact-text">
+        <div class="columns">
+          <div class="column">
+            <strong>🔍 Visual Misidentification (A1)</strong><br>
+            Mercedes-Benz misidentified as Fiat, demonstrating incorrect object recognition under adversarial perturbation
+          </div>
+          <div class="column">
+            <strong>🧠 Reasoning Disruption (A2-A3)</strong><br>
+            Accurate visual perception but contextually incorrect answers, showing disrupted visual-language connection
+          </div>
+          <div class="column">
+            <strong>💡 Knowledge-Based Resistance (A4)</strong><br>
+            Attack fails when answers rely on stored knowledge rather than visual evidence (non-Newtonian fluids)
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">✨ Key Features</h2>
+    </div>
+    
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="has-text-primary mb-3">
+          <i class="fas fa-crosshairs fa-2x"></i>
+        </div>
+        <h3 class="title is-5">Dual-objective Optimization</h3>
+        <p class="compact-text">Built a complete optimization process</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="has-text-primary mb-3">
+          <i class="fas fa-bolt fa-2x"></i>
+        </div>
+        <h3 class="title is-5">Comprehensive Benchmark Integration</h3>
+        <p class="compact-text">Facilitating standardized and reproducible research</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="has-text-primary mb-3">
+          <i class="fas fa-share-alt fa-2x"></i>
+        </div>
+        <h3 class="title is-5">Superior Performance Trade-off</h3>
+        <p class="compact-text">Robust balance between forgetting and model utility</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Citation Section -->
+<section class="section section-minimal has-background-light">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered mb-5">
+      <h2 class="title is-2">📄 Citation</h2>
+    </div>
+    
+    <div class="box">
+      <pre><code>@misc{zhang2025oblivionislightweightlearningunlearning,
+      title={Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models}, 
+      author={Fuyao Zhang and Xinyu Yan and Tiantong Wu and Wenjie Li and Tianxiang Chen and Yang Cao and Ran Yan and Longtao Huang and Wei Yang Bryan Lim and Qiang Yang},
+      year={2025},
+      eprint={2508.08875},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2508.08875}, 
+}</code></pre>
+    </div>
+    
+    <div class="has-text-centered mt-5">
+      <a href="" class="button is-primary is-large">
+        <span class="icon"><i class="fab fa-github"></i></span>
+        <span>Get Started</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-minimal">
+  <div class="container is-max-desktop">
+    <div class="box has-background-light" style="border: 1px solid #ddd;">
+      <h2 class="title is-5 has-text-centered has-text-danger" style="margin-bottom: 1rem;">
+        Disclaimer
+      </h2>
+      <p class="is-size-6 has-text-centered" style="line-height: 1.5; max-width: 700px; margin: 0 auto;">
+        We are aware of an existing work whose title bears some similarity to ours.
+        The term <em>Oblivionis</em> in our title originates from the Latin root <em>oblivio</em>,
+        meaning “forgetting” or “oblivion.” We would like to clarify that our study is
+        independent and distinct in scope, methodology, and contributions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>© 2025 Oblivionis Project</p>
+  </div>
+</footer>
+
+</body>
+</html> 
