@@ -1,0 +1,1359 @@
+/**
+ * Feature4X Project Components Stylesheet
+ * Contains component-specific styles extracted from inline HTML
+ */
+
+/* CSS变量用于主题切换 */
+:root {
+  /* 浅色模式变量 */
+  --bg-primary: #f9f9f9;
+  --bg-secondary: #fff;
+  --bg-tertiary: #f0f4f8;
+  --text-primary: #333;
+  --text-secondary: #555;
+  --text-muted: #666;
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 15px 35px rgba(106, 17, 203, 0.15);
+  --border-color: rgba(106, 17, 203, 0.05);
+  --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #e8ebef 100%);
+  --bubble-gradient-1: linear-gradient(135deg, rgba(106, 17, 203, 0.05) 0%, rgba(37, 117, 252, 0.05) 100%);
+  --bubble-gradient-2: linear-gradient(135deg, rgba(37, 117, 252, 0.05) 0%, rgba(106, 17, 203, 0.05) 100%);
+  --bubble-gradient-3: linear-gradient(135deg, rgba(106, 17, 203, 0.03) 0%, rgba(37, 117, 252, 0.03) 100%);
+  --code-bg: #f8f9fa;
+  --lightbox-bg: rgba(0, 0, 0, 0.9);
+  --lightbox-text: white;
+}
+
+/* 深色模式变量 */
+[data-theme="dark"] {
+  --bg-primary: #121220;      /* 更暗的背景色 */
+  --bg-secondary: #0c1428;    /* 更暗的卡片背景 */
+  --bg-tertiary: #0a1a30;     /* 更暗的特殊区域背景 */
+  --text-primary: #f0f0f0;    /* 更亮的主文字颜色 */
+  --text-secondary: #d0d0d0;  /* 更亮的次要文字颜色 */
+  --text-muted: #a0a0a0;      /* 更亮的辅助文字颜色 */
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --card-hover-shadow: 0 15px 35px rgba(106, 17, 203, 0.4);
+  --border-color: rgba(106, 17, 203, 0.3);
+  --gradient-bg: linear-gradient(135deg, #0c1428 0%, #121220 100%);
+  --bubble-gradient-1: linear-gradient(135deg, rgba(106, 17, 203, 0.15) 0%, rgba(37, 117, 252, 0.15) 100%);
+  --bubble-gradient-2: linear-gradient(135deg, rgba(37, 117, 252, 0.15) 0%, rgba(106, 17, 203, 0.15) 100%);
+  --bubble-gradient-3: linear-gradient(135deg, rgba(106, 17, 203, 0.1) 0%, rgba(37, 117, 252, 0.1) 100%);
+  --code-bg: #1a1a1a;
+  --lightbox-bg: rgba(0, 0, 0, 0.98);
+  --lightbox-text: #f0f0f0;
+}
+
+/* 深色模式切换按钮样式 */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle i {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .theme-toggle {
+    top: 75px; /* 在移动设备上，避免与导航菜单按钮重叠 */
+  }
+}
+
+/* Desktop navigation styles */
+@media screen and (min-width: 769px) {
+  .desktop-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(to right, rgba(255,255,255,0.95), rgba(243,244,246,0.95));
+    padding: 0.4rem 0.15rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    width: 100%;
+  }
+  
+  .desktop-nav .nav-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 0.25rem;
+  }
+  
+  .desktop-nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-width: 100%;
+  }
+  
+  .desktop-nav li {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+  }
+  
+  .desktop-nav a {
+    display: block;
+    padding: 0.2rem 0.3rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-width: 100px;
+    margin: 0 auto;
+  }
+  
+  .desktop-nav a:hover {
+    color: #6a11cb;
+    background-color: rgba(106, 17, 203, 0.05);
+  }
+  
+  .desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .desktop-nav a:hover::after {
+    width: 100%;
+  }
+  
+  .desktop-nav a.active {
+    color: #6a11cb;
+    background-color: rgba(106, 17, 203, 0.08);
+  }
+  
+  .desktop-nav a.active::after {
+    width: 100%;
+  }
+}
+
+/* Responsive navigation adjustments */
+@media screen and (min-width: 769px) and (max-width: 850px) {
+  .desktop-nav a {
+    padding: 0.15rem 0.25rem;
+    font-size: 0.65rem;
+    min-width: 80px;
+  }
+  
+  .desktop-nav ul {
+    gap: 0.05rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .desktop-nav a {
+    padding: 0.25rem 0.35rem;
+    font-size: 0.75rem;
+    min-width: 90px;
+  }
+  
+  .desktop-nav ul {
+    gap: 0.15rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .desktop-nav a {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+  
+  .desktop-nav ul {
+    gap: 0.2rem;
+  }
+  
+  .desktop-nav .nav-container {
+    padding: 0 0.5rem;
+    max-width: 1000px;
+  }
+}
+
+/* Abstract and Overview text styles */
+.abstract-section .content p,
+#overview .content-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  text-indent: 0;
+}
+
+.abstract-section em,
+#overview em {
+  background: linear-gradient(120deg, rgba(106, 17, 203, 0.08) 0%, rgba(37, 117, 252, 0.08) 100%);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.abstract-section .content-card,
+#overview .content-card {
+  padding: 2rem !important;
+}
+
+/* Container styles */
+.container_teaser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.column_teaser {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Basic styling for enhanced visual appeal */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.publication-title {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  word-wrap: break-word;
+  hyphens: auto;
+  position: relative;
+  display: inline-block;
+  padding: 0 1rem;
+  transition: background 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+}
+
+.hero.teaser {
+  margin: 1.5rem 0;
+  padding: 1.5rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.8rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.5s ease-in-out, background 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+  letter-spacing: 0.5px;
+  font-family: 'Google Sans', sans-serif;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: auto;
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(106, 17, 203, 0.3);
+}
+
+.section-title:hover {
+  transform: translateY(-2px);
+}
+
+.section-title:hover::after {
+  width: 120px;
+  box-shadow: 0 2px 8px rgba(106, 17, 203, 0.5);
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(106, 17, 203, 0.1) 0%, rgba(106, 17, 203, 0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.section-title .section-title-decoration {
+  display: inline-block;
+  margin: 0 0.4rem;
+  opacity: 0.7;
+  vertical-align: middle;
+  font-size: 0.8em;
+  color: #6a11cb;
+  -webkit-text-fill-color: #6a11cb;
+  font-weight: normal;
+}
+
+.content-card {
+  background-color: var(--bg-secondary);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  margin-top: 0.5rem;
+  border-top: 3px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+@media screen and (min-width: 769px) {
+  .content-card {
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .content-card:hover {
+    transform: translateY(-5px) rotateX(2deg) rotateY(-2deg);
+  }
+}
+
+img, video {
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 1rem auto;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  display: block;
+}
+
+.video-container {
+  position: relative;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.img-container img:hover, .video-container video:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.feature-section {
+  background-color: var(--bg-tertiary);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.author-block a {
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.author-block a:hover {
+  color: #6a11cb;
+  text-decoration: underline;
+}
+
+.link-block {
+  margin: 0 0.5rem;
+}
+
+.external-link.button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.external-link.button:hover {
+  transform: translateY(-3px);
+  background-color: #4a5568 !important;
+}
+
+/* Image container styles */
+.img-container {
+  margin: 0.75rem auto;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Image caption styles */
+.img-caption {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  text-align: center;
+  font-style: italic;
+}
+
+/* BibTeX styling */
+.bibtex {
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  border-left: 4px solid #4285f4;
+}
+
+pre {
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  overflow-x: auto;
+}
+
+pre code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+  .title.is-1 {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .is-size-5 {
+    font-size: 0.9rem !important;
+  }
+  
+  h2.title.is-3 {
+    font-size: 1.5rem !important;
+  }
+  
+  .content-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-body {
+    padding: 1rem 0.75rem;
+  }
+  
+  .container.is-max-desktop {
+    padding: 0 0.75rem;
+  }
+  
+  .section-title:after {
+    width: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+  }
+  
+  .publication-links .link-block {
+    margin: 0.25rem;
+  }
+  
+  .external-link.button {
+    font-size: 0.85rem;
+    padding: 0 0.75rem;
+    height: 2.25rem;
+  }
+  
+  .publication-authors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .author-block {
+    margin: 0 0.25rem;
+    white-space: nowrap;
+  }
+  
+  img, video {
+    margin: 0.75rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  footer.footer {
+    padding: 1.5rem 0;
+  }
+  
+  footer .icon-link {
+    font-size: 1.5rem !important;
+  }
+  
+  #scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .video-container {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+    padding-bottom: 0.6rem;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .section-title:hover::after {
+    width: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .section-title .section-title-decoration {
+    font-size: 0.7em;
+    margin: 0 0.3rem;
+  }
+  
+  .has-text-justified {
+    text-align: left;
+  }
+  
+  .content-card p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  sub, sup {
+    font-size: 70%;
+  }
+}
+
+/* Tiny screen additional adjustments */
+@media screen and (max-width: 480px) {
+  .title.is-1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2.title.is-3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .content p {
+    font-size: 0.9rem;
+  }
+  
+  .publication-venue {
+    padding: 0.35rem 1rem !important;
+  }
+  
+  .publication-venue p {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Reading progress bar */
+.reading-progress {
+  position: fixed;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  z-index: 999;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  box-shadow: 0 2px 5px rgba(106, 17, 203, 0.2);
+}
+
+/* Scroll to top button */
+#scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #6a11cb;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+#scroll-to-top:hover {
+  background-color: #4a0d8f;
+  transform: translateY(-3px);
+}
+
+/* Section anchors for navigation */
+.section-anchor {
+  position: relative;
+  top: -70px;
+  visibility: hidden;
+  display: block;
+}
+
+/* Image lightbox styles */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  touch-action: none;
+}
+
+.lightbox-container {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 2001;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.img-container img {
+  cursor: zoom-in;
+}
+
+/* Main header special styles */
+.hero.main-header {
+  background: var(--gradient-bg);
+}
+
+@media screen and (min-width: 769px) {
+  .hero.main-header {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero.main-header::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: var(--bubble-gradient-1);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 15s ease-in-out infinite;
+  }
+  
+  .hero.main-header::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 15%;
+    width: 200px;
+    height: 200px;
+    background: var(--bubble-gradient-2);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Publication venue styles */
+.publication-venue {
+  background-color: rgba(106, 17, 203, 0.1);
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(106, 17, 203, 0.2);
+  text-align: center;
+  position: relative;
+  padding-left: 2.5rem !important;
+}
+
+.venue-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #6a11cb;
+}
+
+.publication-venue p {
+  color: #6a11cb;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Author info styles */
+.publication-authors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.footer .icon-link {
+  font-size: 1.75rem;
+  color: #fff;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Centered content */
+.has-text-centered {
+  text-align: center !important;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Video caption style */
+.video-caption {
+  font-size: 14px;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Additional styles for replacing inline styles */
+.main-header-bg {
+  background: var(--gradient-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 769px) {
+  .main-header-bg::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: var(--bubble-gradient-1);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 15s ease-in-out infinite;
+  }
+  
+  .main-header-bg::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 15%;
+    width: 200px;
+    height: 200px;
+    background: var(--bubble-gradient-2);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+  
+  /* 添加第三个气泡 */
+  .main-header-bg .hero-body::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    width: 150px;
+    height: 150px;
+    background: var(--bubble-gradient-3);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 12s ease-in-out infinite;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.abstract-section-padding {
+  padding: 1.5rem 0;
+}
+
+.text-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.text-section {
+  text-align: left;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.standard-image {
+  margin: 0 auto;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.feature-section-padding {
+  padding: 2rem 1.5rem;
+}
+
+.bibtex-container {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, rgba(106, 17, 203, 0.2), rgba(37, 117, 252, 0.2));
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(106, 17, 203, 0.3);
+}
+
+.bibtex-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.copy-button {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bibtex-content {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.footer-custom {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.footer-icons {
+  margin-bottom: 1.5rem;
+}
+
+.footer-icon-link {
+  font-size: 1.75rem;
+  color: #fff;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-icon-link:hover {
+  color: #6a11cb;
+  transform: translateY(-3px);
+}
+
+.footer-content {
+  color: #bdc3c7;
+}
+
+.footer-text {
+  margin-bottom: 0.75rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  padding: 0 1rem;
+}
+
+.footer-link {
+  color: #3498db;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #6a11cb;
+}
+
+.footer-text-small {
+  margin-top: 0.75rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  margin-bottom: 0.75rem;
+  padding: 0 1rem;
+}
+
+.footer-text-copyright {
+  margin-top: 1.5rem;
+  font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+  margin-bottom: 0;
+  padding: 0 1rem;
+}
+
+.scroll-top-button {
+  padding: 12px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* BibTeX copy button states */
+.copy-button-success {
+  background: linear-gradient(135deg, #00b09b, #96c93d) !important;
+}
+
+.copy-button-error {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b) !important;
+}
+
+/* Scroll to top button hover state */
+.scroll-top-button-hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 主题切换过渡效果 */
+.theme-transition,
+.theme-transition *,
+[data-theme] *,
+[data-theme] {
+  transition: background 0.5s ease, 
+              background-color 0.5s ease, 
+              color 0.5s ease, 
+              border-color 0.5s ease, 
+              box-shadow 0.5s ease,
+              text-shadow 0.5s ease,
+              opacity 0.5s ease,
+              transform 0.5s ease,
+              filter 0.5s ease !important;
+}
+
+/* 深色模式特定样式调整 */
+[data-theme="dark"] .publication-title {
+  background: linear-gradient(90deg, #8a31eb 0%, #45a5fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(106, 17, 203, 0.5);
+}
+
+[data-theme="dark"] .section-title {
+  background: linear-gradient(120deg, #8a31eb 0%, #45a5fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(106, 17, 203, 0.4);
+}
+
+[data-theme="dark"] .highlight-text {
+  background: linear-gradient(120deg, rgba(106, 17, 203, 0.2) 0%, rgba(37, 117, 252, 0.2) 100%);
+}
+
+[data-theme="dark"] img, 
+[data-theme="dark"] video {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  filter: brightness(0.9);
+}
+
+[data-theme="dark"] .desktop-nav {
+  background: linear-gradient(to right, rgba(12, 12, 32, 0.95), rgba(10, 20, 40, 0.95));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] pre {
+  background-color: #1a1a1a;
+  border-left: 3px solid rgba(106, 17, 203, 0.5);
+}
+
+[data-theme="dark"] code {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .scroll-to-top-button {
+  background: linear-gradient(135deg, #42275a 0%, #2575fc 100%);
+}
+
+[data-theme="dark"] .content-card {
+  border-top: 3px solid rgba(106, 17, 203, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: linear-gradient(135deg, #42275a 0%, #2575fc 100%);
+}
+
+[data-theme="dark"] .reading-progress {
+  background: linear-gradient(to right, #42275a, #2575fc);
+}
+
+[data-theme="dark"] .publication-venue {
+  background-color: rgba(106, 17, 203, 0.2);
+}
+
+[data-theme="dark"] .publication-venue p {
+  color: #a388d6;
+}
+
+[data-theme="dark"] .venue-icon {
+  color: #a388d6;
+}
+
+/* 侧边导航在深色模式下的样式 */
+[data-theme="dark"] .mobile-nav-sidebar {
+  background-color: var(--bg-secondary);
+  border-color: rgba(106, 17, 203, 0.3);
+}
+
+[data-theme="dark"] .mobile-nav-sidebar a {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .mobile-nav-sidebar a:hover, 
+[data-theme="dark"] .mobile-nav-sidebar a.active {
+  background-color: rgba(106, 17, 203, 0.2);
+  color: #a388d6;
+}
+
+/* BibTeX复制按钮在深色模式下的样式 */
+[data-theme="dark"] .copy-button {
+  background: linear-gradient(135deg, #42275a 0%, #2575fc 100%);
+}
+
+/* BibTeX复制按钮状态 */
+.copy-button-success {
+  background: linear-gradient(135deg, #00b09b, #96c93d) !important;
+}
+
+.copy-button-error {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b) !important;
+}
+
+/* 滚动到顶部按钮悬停状态 */
+.scroll-top-button-hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 深色模式下Abstract部分的样式 */
+[data-theme="dark"] .abstract-section {
+  background-color: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] .abstract-section.is-light {
+  background-color: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] .abstract-section.hero.is-light {
+  background-color: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] .abstract-section .content-card {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--card-shadow);
+}
+
+/* 深色模式下BibTeX部分的样式 */
+[data-theme="dark"] .bibtex-container {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme="dark"] .bibtex-header {
+  background: linear-gradient(to right, rgba(106, 17, 203, 0.2), rgba(37, 117, 252, 0.2));
+  border-bottom: 1px solid rgba(106, 17, 203, 0.3);
+}
+
+[data-theme="dark"] .bibtex-title {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .bibtex-content {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] pre code {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .desktop-nav a {
+  color: #e0e0e0;  /* 更亮的导航文字颜色 */
+}
+
+[data-theme="dark"] .desktop-nav a:hover {
+  color: #a388d6;
+  background-color: rgba(106, 17, 203, 0.15);
+}
+
+[data-theme="dark"] .desktop-nav a.active {
+  color: #a388d6;
+  background-color: rgba(106, 17, 203, 0.2);
+}
+
+[data-theme="dark"] .feature-section {
+  background-color: var(--bg-tertiary);
+}
+
+[data-theme="dark"] #scroll-to-top {
+  background: linear-gradient(135deg, #42275a 0%, #2575fc 100%);
+}
+
+[data-theme="dark"] .bibtex-content code {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] code#bibtex-content {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .mobile-nav-toggle {
+  background: linear-gradient(135deg, #42275a 0%, #2575fc 100%);
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .mobile-nav-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 主题初始化时的过渡 */
+.theme-initializing,
+.theme-initializing * {
+  transition: none !important; /* 防止初始加载时的动画 */
+}
+
+/* 所有作者相关元素禁用过渡动画 */
+.publication-authors *,
+.is-size-6.cofirst {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* 禁用作者之间的逗号的过渡动画 */
+.publication-authors span.author-block:after {
+  color: inherit !important;
+}
+
+/* 确保在主题切换过程中也禁用这些元素的过渡并强制应用颜色 */
+.theme-transition .publication-authors,
+.theme-transition .publication-authors span.author-block,
+.theme-transition .is-size-6.cofirst,
+[data-theme] .publication-authors,
+[data-theme] .publication-authors span.author-block,
+[data-theme] .is-size-6.cofirst {
+  transition: none !important;
+  animation: none !important;
+  /* 强制立即应用样式变化，不使用过渡 */
+  color: var(--text-primary) !important;
+  background: none !important;
+  opacity: 1 !important;
+}
+
+/* 无论在什么状态下，确保链接都显示为蓝色 */
+.publication-authors a,
+.theme-transition .publication-authors a,
+[data-theme] .publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+  transition: color 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.publication-authors a:hover,
+.theme-transition .publication-authors a:hover,
+[data-theme] .publication-authors a:hover {
+  color: #6a11cb !important;
+  text-decoration: underline !important;
+}
+
+/* 深色模式下链接颜色调整 */
+[data-theme="dark"] .publication-authors a,
+.theme-transition[data-theme="dark"] .publication-authors a {
+  color: hsl(204, 90%, 70%) !important;
+}
+
+[data-theme="dark"] .publication-authors a:hover,
+.theme-transition[data-theme="dark"] .publication-authors a:hover {
+  color: #a388d6 !important;
+} 

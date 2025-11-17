@@ -1,0 +1,508 @@
+<!--Authors: Hui Ren (rhfeiyang.github.io)-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents">
+  <meta name="keywords" content="Gaussian Splatting, Semantic Understanding, 4D reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/components.css">
+  <link rel="icon" href="data:,"> <!-- Empty favicon -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/site.js"></script>
+
+<!-- slider scripts-->
+  <script type="module"
+          defer
+          src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+  ></script>
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+  />
+
+  <!-- img comparison slider -->
+  <!-- https://github.com/sneas/img-comparison-slider -->
+</head>
+<body>
+
+<!-- 深色模式切换按钮 -->
+<button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">
+  <i class="fas fa-moon"></i>
+</button>
+
+<!-- For mobile navigation -->
+<!-- 添加阅读进度条 -->
+<div class="reading-progress" id="reading-progress"></div>
+
+<!-- 移动端导航触发按钮 -->
+<button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open navigation menu">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- 移动端导航侧边栏 -->
+<div class="mobile-nav-sidebar" id="mobile-nav-sidebar">
+  <ul>
+    <li><a href="#abstract" class="nav-link">Abstract</a></li>
+    <li><a href="#overview" class="nav-link">Overview</a></li>
+    <li><a href="#sam2" class="nav-link">Segmentation</a></li>
+    <li><a href="#sam2-comparison" class="nav-link">SAM2 Comparison</a></li>
+    <li><a href="#clip" class="nav-link">Perception</a></li>
+    <li><a href="#editing" class="nav-link">Editing</a></li>
+    <li><a href="#vqa" class="nav-link">VQA</a></li>
+    <li><a href="#bibtex" class="nav-link">BibTeX</a></li>
+  </ul>
+</div>
+
+<!-- 移动端导航遮罩层 -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+<!-- 添加桌面端导航栏 -->
+<div class="desktop-nav" id="desktop-nav">
+  <div class="nav-container">
+    <ul>
+      <li><a href="#abstract" class="nav-link">Abstract</a></li>
+      <li><a href="#overview" class="nav-link">Overview</a></li>
+      <li><a href="#sam2" class="nav-link">Segmentation</a></li>
+      <li><a href="#clip" class="nav-link">Perception</a></li>
+      <li><a href="#editing" class="nav-link">Editing</a></li>
+      <li><a href="#vqa" class="nav-link">VQA</a></li>
+      <li><a href="#bibtex" class="nav-link">BibTeX</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+<section class="hero main-header main-header-bg">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Fuyao Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Jiangming Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Che Wang</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Xiongtao Sun</a><sup>1,3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Yurong Hao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Guowei Guan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Wenjie Li</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Longtao Huang</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Wei Yang Bryan Lim</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors affiliations">
+            <span class="author-block"><sup>1</sup>NTU,</span>
+            <span class="author-block"><sup>2</sup>PKU,</span>
+            <span class="author-block"><sup>3</sup>XDU,</span>
+            <span class="author-block"><sup>4</sup>HEBNU,</span>
+            <span class="author-block"><sup>5</sup>Alibaba</span>
+          </div>
+          <div class="flex-center">
+            <!-- <div class="publication-venue" style="padding: 0.5rem 1.5rem !important; text-align: center !important;">
+              <p class="is-size-5">Preprint</p>
+            </div> -->
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content-card">
+        
+        <div class="video-container">
+          <video controls poster="./media/page1.png" width="80%">
+            <source src="./media/agentdemo.mp4" type="video/mp4">
+            Demo Video
+          </video>
+        </div>
+
+        <div class="columns is-vcentered">
+          
+          <div class="column">
+            <h2>
+              Multimodal large language models (MLLMs) are increasingly the core reasoning engines for Graphical User Interface (GUI) mobile agents. Leveraging these models, such agents can handle a wide range of real-world tasks, including personal assistance, travel planning, and financial operations. These agents typically operate on a continuous Perceive–Router–MLLM loop. The Router acts as a centralized API scheduler, receiving user screenshots and task instructions and dispatching requests to a curated set of MLLM APIs to obtain an optimal response. This interaction paradigm, while facilitating coherent and efficient task completion, introduces significant privacy risks.
+            </h2>
+          </div>
+
+          <div class="column">
+            <div class="img-container">
+              <img
+                      src="./media/intro.png"
+                      alt="Method Pipeline"
+                      class="standard-image"
+              >
+            </div>
+          </div>
+
+        </div> </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="content-card">
+        <div class="video-container">
+          <video controls poster="./media/page1.png" width="80%">
+            <source src="./media/agentdemo.mp4" type="video/mp4">
+            Demo Video
+          </video>
+        </div>
+        <h2 class="subtitle has-text-centered video-caption">
+          Feature4X: Building 4D Interactive Scenes with Agentic AI from Monocular Videos. By dynamically distilling modelconditioned features and integrating 2D foundation models with LLMs in feedback loops, Feature4X enables multimodal tasks across 2D, 3D, and 4D with high-level language inputs or direct user interactions, including (but not limited to) segmentation, scene editing, and VQA across novel views and all time steps, unlocking new possibilities for 4D agentic AI.
+        </h2>
+        <div class="img-container">
+          <img
+                  src="./media/intro.png"
+                  alt="Method Pipeline"
+                  class="standard-image"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="section hero is-light abstract-section abstract-section-padding">
+  <span class="section-anchor" id="abstract"></span>
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="has-text-centered">
+          <h2 class="title is-3 section-title">
+            <span class="section-title-decoration">✦</span>
+            Abstract
+            <span class="section-title-decoration">✦</span>
+          </h2>
+        </div>
+        <div class="content-card">
+          <div class="content has-text-left">
+            <p class="text-section">
+              The reliance of mobile GUI agents on Multimodal Large Language Models (MLLMs) introduces a severe privacy vulnerability: screenshots containing Personally Identifiable Information (PII) are often sent to untrusted, third-party routers. These routers can exploit their own MLLMs to mine this data, violating user privacy. Existing privacy perturbations fail the critical dual challenge of this scenario: protecting PII from the router's MLLM while simultaneously preserving task utility for the agent's MLLM.
+To address this gap, we propose the <em>Adversarial Protector (DualTAP)</em>, a novel framework that, for the first time, explicitly decouples these conflicting objectives. DualTAP trains a lightweight generator using two key innovations: (i) a contrastive attention module that precisely identifies and targets only the PII-sensitive regions, and (ii) a dual-task adversarial objective that simultaneously minimizes a task-preservation loss (to maintain agent utility) and a privacy-interference loss (to suppress PII leakage). To facilitate this study, we introduce <em>PrivScreen</em>, a new dataset of annotated mobile screenshots designed specifically for this dual-task evaluation.
+Comprehensive experiments on six diverse MLLMs (e.g., GPT-5) demonstrate DualTAP's state-of-the-art protection. It reduces the average privacy leakage rate by 31.6 percentage points (a 3.0✖️ relative improvement) while, critically, maintaining an 80.8% task success rate—a negligible drop from the 83.6% unprotected baseline. DualTAP presents the first viable solution to the privacy-utility trade-off in mobile MLLM agents.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!--    &lt;!&ndash; Paper video. &ndash;&gt;-->
+    <!--    <div class="columns is-centered has-text-centered">-->
+    <!--      <div class="column is-four-fifths">-->
+    <!--        <h2 class="title is-3">Video</h2>-->
+    <!--        <div class="publication-video">-->
+    <!--          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"-->
+    <!--                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--    &lt;!&ndash;/ Paper video. &ndash;&gt;-->
+  </div>
+</section>
+
+<section class="hero teaser">
+  <span class="section-anchor" id="overview"></span>
+  <div class="container is-max-desktop" >
+    <!--    Method -->
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <h2 class="title is-3 section-title">
+          <span class="section-title-decoration">✦</span>
+          Overview
+          <span class="section-title-decoration">✦</span>
+        </h2>
+      </div>
+      <div class="content-card">
+        <p class="text-section">
+          DualTAP formulates the privacy-utility balance as a dual-objective optimization problem. We first introduce a contrastive attention module to generate a spatial map  that isolates regions pertinent to privacy cues. This map is integrated into a U-Net-style generator  to guide the allocation of perturbations. Second, we optimize using a dual-task adversarial objective, which explicitly trains the generator to trade off task usability and privacy security.
+        <div class="img-container">
+          <img
+                  src="./media/frame1.png"
+                  alt="Method Pipeline"
+                  class="standard-image"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <span class="section-anchor" id="sam2"></span>
+  <div class="container is-max-desktop" >
+    <!--    Method -->
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <h2 class="title is-3 section-title">
+          <span class="section-title-decoration">✦</span>
+          Main Results
+          <span class="section-title-decoration">✦</span>
+        </h2>
+      </div>
+      <div class="content-card">
+        <p class="text-section">
+          The results highlight the superiority of our dual-task adversarial objective and contrastive attention module. This design targets adversarial perturbations to privacy-sensitive regions, effectively decoupling privacy interference from task preservation. Overall, experiments confirm our method achieves state-of-the-art privacy protection across diverse MLLM agents while maintaining strong practical utility.
+        </p>
+        <div class="img-container">
+          <img
+                  src="./media/exp.png"
+                  alt="Segment Anything"
+                  class="standard-image"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <span class="section-anchor" id="sam2-comparison"></span>
+  <div class="container is-max-desktop" >
+    <!--    Method -->
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <h2 class="title is-3 section-title">
+          <span class="section-title-decoration">✦</span>
+          Real-World Case
+          <span class="section-title-decoration">✦</span>
+        </h2>
+      </div>
+      <div class="content-card">
+        <p class="text-section">
+        We evaluated our approach through real-device task execution using Mobile-Agent-V3. Across a range of representative interaction workflows, the agent successfully perceives the interface, issues actions, and completes tasks end-to-end with our privacy protection module enabled. Even after applying our protection mechanisms, the tasks continue to function normally, with no noticeable degradation in success rate or interaction quality. 
+        </p>
+        <div class="img-container">
+          <img
+                  src="./media/real-world-case.png"
+                  alt="Baseline Comparison"
+                  class="standard-image"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <span class="section-anchor" id="clip"></span>
+  <div class="container is-max-desktop" >
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <h2 class="title is-3 section-title">
+          <span class="section-title-decoration">✦</span>
+          Semantic 4D Scene Understanding with CLIP Feature Field
+          <span class="section-title-decoration">✦</span>
+        </h2>
+      </div>
+      <div class="content-card">
+        <p class="text-section">
+          By lifting CLIP-LSeg features into a 4D feature field, we enable <em>pixel-level semantic segmentation</em> from any view at any timestep. This allows robust 4D scene understanding, even as object appearances change over time—for example, accurately identifying a blooming flower from bud to full bloom across views.
+        </p>
+        <div class="img-container">
+          <img
+                  src="./media/figs/fig5_clip_seg_results.jpg"
+                  alt="Scene Understanding"
+                  class="standard-image"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="hero teaser">
+  <span class="section-anchor" id="editing"></span>
+  <div class="container is-max-desktop" >
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <h2 class="title is-3 section-title">
+          <span class="section-title-decoration">✦</span>
+          Scene Editing with AI Agent
+          <span class="section-title-decoration">✦</span>
+        </h2>
+      </div>
+      <div class="content-card">
+        <p class="text-section">
+          Given user prompts, our GPT-powered agent interprets editing intent and autonomously performs scene edits via our 4D CLIP feature field. Examples include both <em>geometric</em> (e.g., "extract" and "delete") and <em>appearance</em> (e.g., "change color") editing in 3D space. While results may not be perfect due to imperfect fine-grained feature alignment and non-optimal editing parameter tuning, the agent adaptively refines parameters and applies edits consistently across views and time—greatly reducing the need for manual tuning—and demonstrates robust, interactive 4D scene manipulation.
+        </p>
+        <div class="img-container">
+          <img
+                  src="./media/figs/fig6_editing_results.jpg"
+                  alt="Scene Editing"
+                  class="standard-image"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section feature-section feature-section-padding" id="BibTeX">
+  <span class="section-anchor" id="bibtex"></span>
+  <div class="container is-max-desktop content">
+    <div class="content-card bibtex-container">
+      <div class="bibtex-header">
+        <h3 class="bibtex-title">BibTeX</h3>
+        <button id="copy-bibtex" class="copy-button">
+          <i class="fas fa-copy"></i> Copy
+        </button>
+      </div>
+      <pre class="bibtex-content"><code id="bibtex-content">
+        <!-- @inproceedings{zhou2025feature4x,
+  title={DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents},
+  author={Zhou, Shijie and Ren, Hui and Weng, Yijia and Zhang, Shuwang and Wang, Zhen and Xu, Dejia and Fan, Zhiwen and You, Suya and Wang, Zhangyang and Guibas, Leonidas and others},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={14179--14190},
+  year={2025}
+} -->
+</code></pre>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer footer-custom">
+  <div class="container">
+    <div class="content has-text-centered">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="footer-icons">
+            <a class="footer-icon-link" href="">
+              <i class="fab fa-github"></i>
+            </a>
+            <a class="footer-icon-link" href="">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a class="footer-icon-link" href="">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          <div class="footer-content">
+            <p class="footer-text">
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" class="footer-link">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p class="footer-text-small">
+              Website source code based on the Nerfies project page. If you want to reuse their source code, please credit them appropriately.
+            </p>
+            <p class="footer-text-copyright">
+              © 2025 DualTAP Team - All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top button -->
+<button id="scroll-to-top" title="Go to top" class="scroll-top-button">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- 添加图片预览弹出层 -->
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-close" id="lightbox-close">
+    <i class="fas fa-times"></i>
+  </div>
+  <div class="lightbox-container">
+    <img src="" alt="" class="lightbox-image" id="lightbox-image">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
