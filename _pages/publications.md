@@ -18,3 +18,5 @@ nav_order: 2
 {% bibliography %}
 
 </div>
+
+## Honors and Awards
