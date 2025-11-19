@@ -34,6 +34,7 @@ social: true # includes social icons at the bottom of the page
 #   limit: 3 # leave blank to include all the blog posts
 ---
 
+
 I am currently a PhD student at the College of Computing and Data Science, [Nanyang Technological University (NTU)](https://www.ntu.edu.sg/), advised by Prof. Wei Yang Bryan Lim. Prior to joining NTU, I received my bachelor’s degree in 2025 from the School of Telecommunications Engineering at [Xidian University](https://www.xidian.edu.cn/), under the supervision of Prof. Dan Wang. From 2024 to 2025, I was an exchange student at Heriot-Watt University. 
 
 My research interests include Agents, Multimodal Large Language Models, and Trustworthy AI.
