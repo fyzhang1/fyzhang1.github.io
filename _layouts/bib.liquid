@@ -66,6 +66,23 @@
             {% assign author_is_self = true %}
           {% endif %}
         {%- endif -%}
+
+        {% assign author_is_bold = false %}
+        {% if site.bold_authors %}
+          {%- assign author_first_downcase = author.first | downcase -%}
+          {%- assign author_last_downcase = author_last_name | downcase -%}
+          {%- for bold_author in site.bold_authors -%}
+            {%- assign bold_first = bold_author.first | default: '' | downcase -%}
+            {%- assign bold_last = bold_author.last | default: '' | downcase -%}
+            {%- if bold_last != '' and bold_last == author_last_downcase -%}
+              {%- if bold_first == '' or bold_first == author_first_downcase -%}
+                {% assign author_is_bold = true %}
+                {% break %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
         {% assign coauthor_url = null %}
         {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
         {% if site.data.coauthors[clean_last_name] %}
@@ -83,22 +100,23 @@
           {%- endif %}
           {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
         {% endif %}
-        {%- if author_is_self -%}
-          <em>
-            {{- author.first }}
-            {{ author_last_html -}}
-          </em>
-        {%- else -%}
-          {%- if coauthor_url -%}
-            <a href="{{ coauthor_url }}">
-              {{- author.first }}
-              {{ author_last_html -}}
-            </a>
+        {%- capture author_markup -%}
+          {%- if author_is_self -%}
+            <em>{{- author.first }} {{ author_last_html -}}</em>
           {%- else -%}
-            {{- author.first }}
-            {{ author_last_html -}}
+            {%- if coauthor_url -%}
+              <a href="{{ coauthor_url }}">{{- author.first }} {{ author_last_html -}}</a>
+            {%- else -%}
+              {{- author.first }} {{ author_last_html -}}
+            {% endif %}
           {% endif %}
-        {%- endif -%}
+        {%- endcapture -%}
+
+        {% if author_is_bold %}
+          <strong>{{ author_markup | strip }}</strong>
+        {% else %}
+          {{ author_markup | strip }}
+        {% endif %}
       {% endfor %}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
 

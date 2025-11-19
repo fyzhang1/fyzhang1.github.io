@@ -24,6 +24,9 @@ last_updated: false # set to true if you want to display last updated in the foo
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
 
+# bold_authors:
+#   - { first: Fuyao, last: Zhang }
+
 # -----------------------------------------------------------------------------
 # Theme
 # -----------------------------------------------------------------------------
@@ -326,6 +329,11 @@ filtered_bibtex_keywords:
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
 # max_author_limit: 3 # leave blank to always show all authors
 more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
+
+# Authors to render in bold inside publication lists
+bold_authors:
+  - first: Fuyao
+    last: Zhang
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
 enable_publication_thumbnails: true
