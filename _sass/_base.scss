@@ -736,6 +736,11 @@ footer.sticky-bottom {
       margin-bottom: 1rem;
 
       .preview {
+        img{
+          width: 140px;      // 改成需要的宽度
+          max-width: 45%;    // 可选：限制最大占比
+          height: auto;
+        }
       }
 
       .abbr {
