@@ -34,8 +34,8 @@ social: true # includes social icons at the bottom of the page
 #   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
 #   limit: 3 # leave blank to include all the blog posts
 honors: |
-  -
-  -
+  - 2022 National Scholarship，China (Top 1%)
+  - 2023 National Scholarship，China (Top 1%)
 
 
 
