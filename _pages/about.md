@@ -19,8 +19,8 @@ profile:
       <a href="https://github.com/fyzhang1" style="color: var(--global-theme-color); text-decoration: none; font-family: sans-serif;">fyzhang1</a>
     </p>
 
-news: true
-selected_papers: true # includes a list of papers marked as "selected={true}"
+# news: true
+# selected_papers: true # includes a list of papers marked as "selected={true}"
 # social: true # includes social icons at the bottom of the page
 
 
@@ -33,11 +33,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 #   enabled: true
 #   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
 #   limit: 3 # leave blank to include all the blog posts
-honors: |
-  - 2022 National Scholarship，China (Top 1%)
-  - 2023 National Scholarship，China (Top 1%)
-
-
+# honors: |
+#   - 2022 National Scholarship，China (Top 1%)
+#   - 2023 National Scholarship，China (Top 1%)
 
 ---
 
@@ -46,10 +44,28 @@ I am currently a PhD student at the College of Computing and Data Science, [Nany
 
 My research interests include Agents, Multimodal Large Language Models, and Trustworthy AI.
 
-##  Section
+## News
 
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_ic.jpg` and put it in the `img/` folder.
+2025.11: 🔥 Oblivionis is accepted by AAAI 2026.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+2025.08: 🔥 One paper on federated learning accepted by IEEE TMC.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+---
+
+## Selected Works
+
+**DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents**<br>**<u>Fuyao Zhang</u>**, Jiaming Zhang, Che Wang, Xiongtao Sun, Yurong Hao, Guowei Guan, Wenjie Li, Longtao Huang, Wei Yang Bryan Lim<br>[[Website]](https://fyzhang1.github.io/DualTAP/)
+
+**Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models**<br>**<u>Fuyao Zhang</u>** , Xinyu Yan, Tiantong Wu, Wenjie Li, Tianxiang Chen, Yang Cao, Ran Yan, Longtao Huang, Wei Yang Bryan Lim, Qiang Yang<br>AAAI 2026, [[PDF]](), [[Website]](https://fyzhang1.github.io/Oblivionis/), [[Code]]()
+
+**Verifiably Forgotten? Gradient Differences Still Enable Data Reconstruction in Federated Unlearning**<br>**<u>Fuyao Zhang</u>**, Wenjie Li, Yurong Hao, Xinyu Yan, Yang Cao, Wei Yang Bryan Lim<br>ArXiv 2025, [[PDF]](), [[Code]]()
+
+**Ground-Assisted LEO Satellite Federated Learning: Dynamic, Efficient, Distributed Learning**<br>**<u>Fuyao Zhang</u>**, Dan Wang, Jiawen Kang, Dusit Niyato<br>IEEE Transactions on Mobile Computing 2025, [[PDF]]()
+
+**DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data**<br>**<u>Fuyao Zhang</u>**, Dan Wang, Chuyang Liang, TrustCom 2024, [[PDF]]()
+
+---
+
+## Honors:
+   - 2022 National Scholarship，China (Top 1%)
+   - 2023 National Scholarship，China (Top 1%)
