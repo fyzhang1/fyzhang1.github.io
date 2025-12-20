@@ -40,7 +40,7 @@ profile:
 ---
 
 
-I am currently a PhD student at the College of Computing and Data Science, [Nanyang Technological University (NTU)](https://www.ntu.edu.sg/), advised by Prof. Wei Yang Bryan Lim. Prior to joining NTU, I received my bachelor’s degree in 2025 from the School of Telecommunications Engineering at [Xidian University](https://www.xidian.edu.cn/), under the supervision of Prof. Dan Wang. From 2024 to 2025, I was an exchange student at Heriot-Watt University. 
+I am currently a PhD student at the College of Computing and Data Science, [Nanyang Technological University (NTU)](https://www.ntu.edu.sg/), advised by [Prof. Wei Yang Bryan Lim](https://sites.google.com/view/wyb/home). Prior to joining NTU, I received my bachelor’s degree in 2025 from the School of Telecommunications Engineering at [Xidian University](https://www.xidian.edu.cn/), under the supervision of [Prof. Dan Wang](https://web.xidian.edu.cn/danwang/). From 2024 to 2025, I was an exchange student at Heriot-Watt University. 
 
 My research interests include Agents, Multimodal Large Language Models, and Trustworthy AI.
 
@@ -62,10 +62,12 @@ My research interests include Agents, Multimodal Large Language Models, and Trus
 
 **Ground-Assisted LEO Satellite Federated Learning: Dynamic, Efficient, Distributed Learning**<br>**<u>Fuyao Zhang</u>**, Dan Wang, Jiawen Kang, Dusit Niyato<br>IEEE Transactions on Mobile Computing 2025, [[PDF]]()
 
-**DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data**<br>**<u>Fuyao Zhang</u>**, Dan Wang, Chuyang Liang, TrustCom 2024, [[PDF]]()
+**DPFCIL: Differentially Private Federated Class-Incremental Learning on non-IID Data**<br>**<u>Fuyao Zhang</u>**, Dan Wang, Chuyang Liang<br>TrustCom 2024, [[PDF]]()
 
 ---
 
-## Honors:
+
+## Honors and Awards:
    - 2022 National Scholarship，China (Top 1%)
    - 2023 National Scholarship，China (Top 1%)
+
