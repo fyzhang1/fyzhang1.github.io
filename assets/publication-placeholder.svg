@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Publication preview placeholder</title>
+  <desc id="desc">A simple geometric placeholder for publication media.</desc>
+  <rect width="640" height="400" fill="#edf1f4"/>
+  <rect x="60" y="50" width="220" height="300" fill="#c5d0d9"/>
+  <rect x="320" y="80" width="250" height="30" fill="#98acbb"/>
+  <rect x="320" y="135" width="180" height="18" fill="#b4c2cc"/>
+  <rect x="320" y="172" width="220" height="18" fill="#b4c2cc"/>
+  <rect x="320" y="209" width="200" height="18" fill="#b4c2cc"/>
+  <rect x="320" y="270" width="110" height="34" rx="17" fill="#7e97a8"/>
+</svg>

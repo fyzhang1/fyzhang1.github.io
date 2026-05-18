@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://fyzhang1.github.io/sitemap.xml
