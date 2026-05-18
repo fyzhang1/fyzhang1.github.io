@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Personal Homepage</title>
+    <meta
+      name="description"
+      content="Markdown-driven personal homepage styled after a clean academic website."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a id="home"></a>
+    <div class="outercontainer">
+      <header>
+        <div class="container page-header">
+          <div class="navleft text"><a id="nav-home-link" href="#home">Home</a></div>
+          <div class="navright-group">
+            <div class="navright text"><a href="#publications">Research</a></div>
+            <div class="navright text"><a href="#home">Home</a></div>
+          </div>
+        </div>
+      </header>
+
+      <div id="header">
+        <div class="container">
+          <div class="row spacer-row"><p></p></div>
+          <div class="row spacer-row"><p></p></div>
+          <div class="row spacer-row"><p></p></div>
+          <div class="row spacer-row"><p></p></div>
+          <div class="row">
+            <div class="col-sm-3 offset-sm-2">
+              <img id="portrait" class="img-fluid" src="./assets/profile-placeholder.svg" alt="Portrait" />
+            </div>
+            <div class="col-sm-5 offset-sm-1">
+              <div id="header-text-name">Name</div>
+              <p></p>
+              <div id="header-roles"></div>
+              <br />
+              <div id="header-emails" class="header-text-email"></div>
+              <p></p>
+              <div id="header-links"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <section class="container lead">
+          <div class="vspace-top section-copy content-column">
+            <h1>About Me</h1>
+            <div id="about-content" class="markdown-content loading-copy">Loading content...</div>
+            <div id="about-note" class="important-note"></div>
+          </div>
+
+          <div class="vspace-top section-copy content-column">
+            <h1>News</h1>
+            <div id="group-content" class="markdown-content loading-copy">Loading content...</div>
+          </div>
+
+          <div class="vspace-top content-column">
+            <a id="publications"></a>
+            <h1>Selected Works</h1>
+            <div id="publication-intro" class="publication-intro loading-copy">Loading content...</div>
+          </div>
+
+          <div id="publications-list"></div>
+
+          <div class="vspace-top section-copy content-column">
+            <h1>Honors and Awards</h1>
+            <div id="honors-content" class="markdown-content loading-copy">Loading content...</div>
+          </div>
+
+          <div class="vspace-top footer-note">
+            <span id="last-updated"></span> <a href="#home">Back to Top</a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>

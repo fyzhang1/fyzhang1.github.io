@@ -1,0 +1,408 @@
+header {
+  width: 100%;
+  height: 45px;
+  margin-top: 0;
+  text-align: center;
+  background-color: #fff !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: fixed;
+  z-index: 2;
+}
+
+body {
+  font-family: "Lato", Verdana, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.58;
+  background-color: #fff;
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: #005f8f;
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #003f60;
+}
+
+a:visited {
+  color: #0d5e7a;
+}
+
+.navleft a:link,
+.navleft a:visited,
+.navright a:link,
+.navright a:visited {
+  color: #111;
+  text-decoration: none;
+}
+
+.navleft a:hover,
+.navright a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.markdown-content a,
+.publication-intro a,
+.paper-author a,
+.footer-note a,
+#header-links a,
+.header-text-email a,
+#publications-list a,
+.research-list a {
+  color: #005f8f;
+  font-weight: 700;
+}
+
+.markdown-content a:hover,
+.publication-intro a:hover,
+.paper-author a:hover,
+.footer-note a:hover,
+#header-links a:hover,
+.header-text-email a:hover,
+#publications-list a:hover,
+.research-list a:hover {
+  color: #003f60;
+}
+
+.markdown-content a:visited,
+.publication-intro a:visited,
+.paper-author a:visited,
+.footer-note a:visited,
+#header-links a:visited,
+.header-text-email a:visited,
+#publications-list a:visited,
+.research-list a:visited {
+  color: #0d5e7a;
+}
+
+.page-header {
+  line-height: 45px;
+  max-width: 1140px;
+  background-color: transparent !important;
+}
+
+.navleft {
+  float: left;
+  padding-left: 90px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.navright {
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1.2em;
+}
+
+.navright-group {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 1.92rem;
+  color: #000;
+  margin-bottom: 0.9rem;
+}
+
+#header {
+  background-color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 56px;
+  padding-bottom: 52px;
+}
+
+#portrait {
+  border: 3px solid #fff;
+  display: block;
+  width: 100%;
+  max-width: 250px;
+}
+
+#header-text-name {
+  color: #000;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.header-text-email {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.55;
+  color: #222;
+}
+
+.header-text-desc {
+  font-size: 16px;
+  line-height: 1.45;
+  color: #111;
+}
+
+.vspace-top {
+  margin-top: 26px;
+}
+
+.vspace-top-news {
+  margin-top: 15px;
+}
+
+.paper-image,
+.paper-video {
+  width: 300px;
+  max-width: 100%;
+}
+
+.paper-video {
+  display: block;
+}
+
+.paper-title {
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.paper-desc {
+  font-size: 16px;
+  line-height: 1.45;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.paper-author {
+  color: #222;
+  font-size: 16px;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+
+.paper-author strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.paper-highlight {
+  color: #691616;
+}
+
+.important-note {
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 14px;
+}
+
+.publication-intro p,
+.markdown-content p {
+  margin-bottom: 0.8rem;
+}
+
+.markdown-content ul {
+  padding-left: 20px;
+}
+
+.markdown-content,
+.publication-intro,
+.section-copy,
+.footer-note {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #111;
+}
+
+.research-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.research-list > li {
+  margin-bottom: 13px;
+}
+
+.research-list .meta-line {
+  font-size: 13px;
+  line-height: 1.45;
+  margin-top: 1px;
+  color: #222;
+}
+
+.publication-row {
+  margin-top: 26px;
+  align-items: flex-start;
+}
+
+.publication-media {
+  padding-right: 10px;
+}
+
+.publication-copy {
+  max-width: 660px;
+}
+
+.publication-note {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.footer-note {
+  color: #222;
+  padding-bottom: 48px;
+}
+
+.loading-copy {
+  color: #7b8b96;
+}
+
+.spacer-row p {
+  margin-bottom: 0.85rem;
+}
+
+.section-copy {
+  font-size: 16px;
+}
+
+.content-column,
+#about-content,
+#group-content,
+#publication-intro {
+  width: 100%;
+  max-width: 1110px;
+}
+
+#header-links,
+#publications-list .col > div:last-child,
+.footer-note a {
+  font-size: 15px;
+}
+
+#header-links i {
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+#header-links a {
+  white-space: nowrap;
+}
+
+#publications-list .row + .row {
+  padding-top: 2px;
+}
+
+#publications-list .col {
+  padding-top: 1px;
+}
+
+#publications-list .publication-media img,
+#publications-list .publication-media video {
+  width: 300px;
+  max-width: 100%;
+}
+
+.container.lead {
+  max-width: 1110px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    min-height: 45px;
+    padding: 8px 0;
+    overflow: hidden;
+  }
+
+  .page-header {
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navleft {
+    float: none;
+    padding-left: 15px;
+    padding-right: 10px;
+    font-size: 1.1em;
+    flex: 0 0 auto;
+  }
+
+  .navright-group {
+    float: none;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .navright {
+    float: none;
+    padding-left: 10px;
+    padding-right: 0;
+    font-size: 1em;
+  }
+
+  .navright:last-child {
+    padding-right: 0;
+  }
+
+  #header {
+    padding-top: 52px;
+    padding-bottom: 40px;
+  }
+
+  #header-text-name {
+    font-size: 34px;
+    margin-top: 18px;
+  }
+
+  .header-text-desc {
+    font-size: 15px;
+  }
+
+  .publication-row {
+    margin-top: 22px;
+  }
+
+  .publication-media {
+    padding-right: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navleft {
+    font-size: 1em;
+    padding-left: 12px;
+  }
+
+  .navright {
+    font-size: 0.9em;
+    padding-left: 8px;
+  }
+
+  .page-header {
+    padding: 0 8px;
+  }
+}
