@@ -84,6 +84,78 @@ function parseLinkLine(line) {
   return { label: match[1], url: match[2] };
 }
 
+function firstAvailableLink(markdown) {
+  const linkPattern = /\[\[([^\]]+)\]\]\(([^)]*)\)|\[([^\]]+)\]\(([^)]*)\)/g;
+  let match = linkPattern.exec(markdown);
+  while (match) {
+    const url = (match[2] || match[4] || "").trim();
+    if (url) {
+      return url;
+    }
+    match = linkPattern.exec(markdown);
+  }
+  return "";
+}
+
+function parseInlineLinks(markdown) {
+  const linkPattern = /\[\[([^\]]+)\]\]\(([^)]*)\)|\[([^\]]+)\]\(([^)]*)\)/g;
+  const links = [];
+  let match = linkPattern.exec(markdown);
+  while (match) {
+    const label = (match[1] || match[3] || "").trim();
+    const url = (match[2] || match[4] || "").trim();
+    if (label) {
+      links.push({ label, url });
+    }
+    match = linkPattern.exec(markdown);
+  }
+  return links;
+}
+
+function publicationLinkIcon(kind) {
+  if (kind === "code") {
+    return '<i class="fab fa-github" aria-hidden="true"></i>';
+  }
+
+  if (kind === "paper") {
+    return '<i class="fas fa-file-alt" aria-hidden="true"></i>';
+  }
+
+  if (kind === "website") {
+    return '<i class="fas fa-globe" aria-hidden="true"></i>';
+  }
+
+  return '<i class="fas fa-link" aria-hidden="true"></i>';
+}
+
+function publicationIconLinks(entry) {
+  const links = [
+    ...parseInlineLinks(entry.note),
+    ...parseInlineLinks(entry.links)
+  ];
+  const findUrl = (pattern) => links.find((link) => pattern.test(link.label))?.url || "";
+  const firstUrl = links.find((link) => link.url)?.url || "";
+  const fallbackUrl = findUrl(/website|project|demo|page/i) || firstUrl || "https://fyzhang1.github.io/";
+
+  return [
+    {
+      kind: "paper",
+      label: "Paper",
+      url: findUrl(/pdf|paper|arxiv/i) || fallbackUrl
+    },
+    {
+      kind: "website",
+      label: "Website",
+      url: findUrl(/website|project|demo|page/i) || fallbackUrl
+    },
+    {
+      kind: "code",
+      label: "Code",
+      url: findUrl(/code|github/i) || fallbackUrl
+    }
+  ];
+}
+
 function renderProfile(profile) {
   document.title = profile.name;
   document.querySelector("#nav-home-link").textContent = profile.navLabel;
@@ -218,16 +290,16 @@ function renderPublications(entries) {
         ? `<img src="${media.src}" alt="${media.alt}" class="img-fluid paper-image">`
         : '<img src="./assets/publication-placeholder.svg" alt="Publication preview" class="img-fluid paper-image">';
 
-      const linkHtml = entry.links
-        .split(/\s+/)
-        .map((token) => parseLinkLine(token))
-        .filter(Boolean)
-        .map((link) => `<a href="${link.url}">[${link.label}]</a>`)
-        .join("\n                        ");
-
-      const noteHtml = entry.note
-        ? `<div class="paper-highlight publication-note">${marked.parseInline(entry.note)}</div>`
-        : "";
+      const linkHtml = publicationIconLinks(entry)
+        .map((link) => {
+          return `<a class="publication-link-icon" href="${link.url}" aria-label="${link.label}" title="${link.label}">${publicationLinkIcon(link.kind)}</a>`;
+        })
+        .join("");
+      const noteHtml = `<div class="publication-links">${linkHtml}</div>`;
+      const titleLink = firstAvailableLink(entry.note || entry.links);
+      const titleHtml = titleLink
+        ? `<a href="${titleLink}">${entry.title}</a>`
+        : entry.title;
 
       return `
         <div class="row publication-row">
@@ -235,10 +307,9 @@ function renderPublications(entries) {
             ${mediaHtml}
           </div>
           <div class="col-sm-8 publication-copy">
-            <div class="paper-title">${entry.title}</div>
+            <div class="paper-title">${titleHtml}</div>
             <div class="paper-desc">${marked.parseInline(entry.venue)}</div>
             <div class="paper-author">${marked.parseInline(entry.authors)}</div>
-            <div>${linkHtml}</div>
             ${noteHtml}
           </div>
         </div>
