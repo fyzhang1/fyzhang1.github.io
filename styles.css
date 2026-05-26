@@ -22,18 +22,18 @@ body {
 }
 
 a {
-  color: #005f8f;
+  color: #002fa7;
   text-decoration: none;
   transition: color 120ms ease;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #003f60;
+  color: #001f70;
 }
 
 a:visited {
-  color: #0d5e7a;
+  color: #002fa7;
 }
 
 .navleft a:link,
@@ -58,7 +58,7 @@ a:visited {
 .header-text-email a,
 #publications-list a,
 .research-list a {
-  color: #005f8f;
+  color: #002fa7;
   font-weight: 700;
 }
 
@@ -70,7 +70,7 @@ a:visited {
 .header-text-email a:hover,
 #publications-list a:hover,
 .research-list a:hover {
-  color: #003f60;
+  color: #001f70;
 }
 
 .markdown-content a:visited,
@@ -81,7 +81,7 @@ a:visited {
 .header-text-email a:visited,
 #publications-list a:visited,
 .research-list a:visited {
-  color: #0d5e7a;
+  color: #002fa7;
 }
 
 .page-header {
@@ -178,6 +178,15 @@ h1 {
   margin-bottom: 2px;
 }
 
+.paper-title a {
+  color: #002fa7;
+  font-weight: 700;
+}
+
+.paper-title a:hover {
+  color: #001f70;
+}
+
 .paper-desc {
   font-size: 16px;
   line-height: 1.45;
@@ -260,6 +269,29 @@ h1 {
 .publication-note {
   margin-top: 4px;
   font-size: 14px;
+}
+
+.publication-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 7px;
+}
+
+.publication-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: #002fa7;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.publication-link-icon:hover {
+  color: #001f70;
+  text-decoration: none;
 }
 
 .footer-note {
