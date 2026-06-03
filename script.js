@@ -3,9 +3,11 @@ const aboutPath = "./content/about.md";
 const groupPath = "./content/group.md";
 const publicationsPath = "./content/publications.md";
 const honorsPath = "./content/honors.md";
+const contentVersion = "20260603-publication-cards";
 
 async function fetchText(path) {
-  const response = await fetch(path);
+  const separator = path.includes("?") ? "&" : "?";
+  const response = await fetch(`${path}${separator}v=${contentVersion}`, { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`Failed to load ${path}`);
   }
@@ -296,10 +298,9 @@ function renderPublications(entries) {
         })
         .join("");
       const noteHtml = `<div class="publication-links">${linkHtml}</div>`;
-      const titleLink = firstAvailableLink(entry.note || entry.links);
-      const titleHtml = titleLink
-        ? `<a href="${titleLink}">${entry.title}</a>`
-        : entry.title;
+      const summaryHtml = entry.description
+        ? `<div class="paper-summary">${marked.parseInline(entry.description)}</div>`
+        : "";
 
       return `
         <div class="row publication-row">
@@ -307,10 +308,13 @@ function renderPublications(entries) {
             ${mediaHtml}
           </div>
           <div class="col-sm-8 publication-copy">
-            <div class="paper-title">${titleHtml}</div>
-            <div class="paper-desc">${marked.parseInline(entry.venue)}</div>
+            <div class="paper-title">${entry.title}</div>
             <div class="paper-author">${marked.parseInline(entry.authors)}</div>
-            ${noteHtml}
+            ${summaryHtml}
+            <div class="publication-meta-row">
+              <div class="paper-desc">${marked.parseInline(entry.venue)}</div>
+              ${noteHtml}
+            </div>
           </div>
         </div>
       `;

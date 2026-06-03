@@ -22,18 +22,18 @@ body {
 }
 
 a {
-  color: #002fa7;
+  color: #1f4e79;
   text-decoration: none;
   transition: color 120ms ease;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #001f70;
+  color: #15395a;
 }
 
 a:visited {
-  color: #002fa7;
+  color: #1f4e79;
 }
 
 .navleft a:link,
@@ -58,7 +58,7 @@ a:visited {
 .header-text-email a,
 #publications-list a,
 .research-list a {
-  color: #002fa7;
+  color: #1f4e79;
   font-weight: 700;
 }
 
@@ -70,7 +70,7 @@ a:visited {
 .header-text-email a:hover,
 #publications-list a:hover,
 .research-list a:hover {
-  color: #001f70;
+  color: #15395a;
 }
 
 .markdown-content a:visited,
@@ -81,7 +81,7 @@ a:visited {
 .header-text-email a:visited,
 #publications-list a:visited,
 .research-list a:visited {
-  color: #002fa7;
+  color: #1f4e79;
 }
 
 .page-header {
@@ -162,8 +162,12 @@ h1 {
 
 .paper-image,
 .paper-video {
-  width: 300px;
-  max-width: 100%;
+  width: 100%;
+  height: 164px;
+  max-width: 318px;
+  border-radius: 6px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .paper-video {
@@ -171,39 +175,41 @@ h1 {
 }
 
 .paper-title {
-  color: #000;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.4;
-  margin-bottom: 2px;
-}
-
-.paper-title a {
-  color: #002fa7;
-  font-weight: 700;
-}
-
-.paper-title a:hover {
-  color: #001f70;
+  color: #111;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 7px;
 }
 
 .paper-desc {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.45;
-  margin-bottom: 4px;
-  color: #222;
+  color: #496783;
+  font-style: italic;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .paper-author {
-  color: #222;
-  font-size: 16px;
+  color: #667080;
+  font-size: 15px;
   line-height: 1.55;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  font-style: italic;
+  font-weight: 600;
 }
 
 .paper-author strong {
-  color: #000;
-  font-weight: 600;
+  color: #424b56;
+  font-weight: 800;
+}
+
+.paper-summary {
+  color: #2f5f86;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
 .paper-highlight {
@@ -254,16 +260,40 @@ h1 {
 }
 
 .publication-row {
-  margin-top: 26px;
+  position: relative;
+  margin-top: 24px;
+  margin-left: 0;
+  margin-right: 0;
   align-items: flex-start;
+  padding: 15px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fff 0%, #fcfcfc 100%);
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.publication-row:hover {
+  transform: translateY(-3px);
+  border-color: #c9d3dc;
+  box-shadow: 0 14px 34px rgba(17, 24, 39, 0.1);
+  background: #fff;
 }
 
 .publication-media {
-  padding-right: 10px;
+  align-self: stretch;
+  min-height: 174px;
+  padding-left: 0;
+  padding-right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .publication-copy {
-  max-width: 660px;
+  max-width: none;
+  padding-left: 12px;
+  padding-right: 4px;
 }
 
 .publication-note {
@@ -275,7 +305,14 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 7px;
+  margin-top: 0;
+}
+
+.publication-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 12px;
 }
 
 .publication-link-icon {
@@ -284,14 +321,16 @@ h1 {
   justify-content: center;
   width: 22px;
   height: 22px;
-  color: #002fa7;
+  color: #1f4e79;
   font-size: 17px;
   line-height: 1;
+  transition: color 140ms ease, transform 140ms ease;
 }
 
 .publication-link-icon:hover {
-  color: #001f70;
+  color: #15395a;
   text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .footer-note {
@@ -346,6 +385,76 @@ h1 {
   margin-bottom: 0;
 }
 
+.experience-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding-left: 12px;
+}
+
+.experience-list::before {
+  content: "";
+  position: absolute;
+  left: 35px;
+  top: 18px;
+  bottom: 18px;
+  width: 1px;
+  background-color: #d7d7d7;
+}
+
+.experience-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 3px 0;
+  background-color: transparent;
+}
+
+.experience-logo-wrap {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 50%;
+}
+
+.experience-logo {
+  max-width: 34px;
+  max-height: 34px;
+  object-fit: contain;
+  display: block;
+}
+
+.experience-school {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.experience-time {
+  color: #444;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.35;
+  margin-bottom: 1px;
+}
+
+.experience-desc {
+  color: #222;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 #header-links,
 #publications-list .col > div:last-child,
 .footer-note a {
@@ -371,8 +480,11 @@ h1 {
 
 #publications-list .publication-media img,
 #publications-list .publication-media video {
-  width: 300px;
-  max-width: 100%;
+  width: 100%;
+  height: 164px;
+  max-width: 318px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .container.lead {
@@ -442,11 +554,59 @@ h1 {
 
   .publication-row {
     margin-top: 22px;
+    padding: 13px;
   }
 
   .publication-media {
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
     margin-bottom: 10px;
+    min-height: 156px;
+  }
+
+  .paper-image,
+  .paper-video,
+  #publications-list .publication-media img,
+  #publications-list .publication-media video {
+    height: 150px;
+    max-width: 100%;
+  }
+
+  .publication-copy {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .paper-title {
+    font-size: 17px;
+  }
+
+  .paper-desc {
+    white-space: normal;
+  }
+
+  .experience-item {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .experience-logo-wrap {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .experience-logo {
+    max-width: 31px;
+    max-height: 31px;
+  }
+
+  .experience-school {
+    font-size: 16px;
+  }
+
+  .experience-time {
+    font-size: 14px;
   }
 }
 
@@ -463,5 +623,9 @@ h1 {
 
   .page-header {
     padding: 0 8px;
+  }
+
+  .experience-item {
+    gap: 12px;
   }
 }
