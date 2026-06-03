@@ -239,7 +239,7 @@ h1 {
 .research-list {
   list-style-type: none;
   padding-left: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .research-list > li {
@@ -317,6 +317,33 @@ h1 {
 #publication-intro {
   width: 100%;
   max-width: 1110px;
+}
+
+#group-content {
+  max-height: 212px;
+  overflow-y: auto;
+  padding: 14px 18px;
+  background-color: #f3f3f3;
+  border-radius: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #b8b8b8 transparent;
+}
+
+#group-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+#group-content::-webkit-scrollbar-thumb {
+  background-color: #b8b8b8;
+  border-radius: 999px;
+}
+
+#group-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#group-content .research-list > li:last-child {
+  margin-bottom: 0;
 }
 
 #header-links,
