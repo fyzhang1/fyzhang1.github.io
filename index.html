@@ -77,9 +77,18 @@
             <a id="publications"></a>
             <h1>Selected Works</h1>
             <div id="publication-intro" class="publication-intro loading-copy">Loading content...</div>
+            <div class="work-tabs" role="tablist" aria-label="Selected works categories">
+              <button class="work-tab active" type="button" data-work-tab="papers" role="tab" aria-selected="true" autocomplete="off">
+                Papers
+              </button>
+              <button class="work-tab" type="button" data-work-tab="projects" role="tab" aria-selected="false" autocomplete="off">
+                Datasets & Projects
+              </button>
+            </div>
           </div>
 
-          <div id="publications-list"></div>
+          <div id="publications-list" class="works-panel active" data-work-panel="papers"></div>
+          <div id="projects-list" class="works-panel" data-work-panel="projects"></div>
 
           <div class="vspace-top section-copy content-column">
             <h1>Honors and Awards</h1>
@@ -139,6 +148,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="./script.js?v=20260603-publication-cards" type="module"></script>
+    <script src="./script.js?v=20260605-work-tabs-3" type="module"></script>
   </body>
 </html>

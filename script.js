@@ -2,8 +2,9 @@ const profilePath = "./content/profile.md";
 const aboutPath = "./content/about.md";
 const groupPath = "./content/group.md";
 const publicationsPath = "./content/publications.md";
+const projectsPath = "./content/projects.md";
 const honorsPath = "./content/honors.md";
-const contentVersion = "20260603-publication-cards";
+const contentVersion = "20260605-work-tabs";
 
 async function fetchText(path) {
   const separator = path.includes("?") ? "&" : "?";
@@ -248,9 +249,11 @@ function parsePublications(markdown) {
 
       return {
         title,
+        type: meta.type || "",
         venue: meta.venue || "",
         authors: meta.authors || "",
         media: meta.media || "",
+        metrics: meta.metrics || "",
         links: meta.links || "",
         note: meta.note || "",
         description: descriptionLines.join("\n")
@@ -322,6 +325,85 @@ function renderPublications(entries) {
     .join("");
 }
 
+function projectIconForLabel(label) {
+  if (/hugging\s*face/i.test(label)) {
+    return '<span class="hf-mark" aria-hidden="true">HF</span>';
+  }
+
+  if (/download/i.test(label)) {
+    return '<i class="fas fa-download" aria-hidden="true"></i>';
+  }
+
+  if (/github|code/i.test(label)) {
+    return '<i class="fab fa-github" aria-hidden="true"></i>';
+  }
+
+  return '<i class="fas fa-link" aria-hidden="true"></i>';
+}
+
+function renderProjects(entries) {
+  const container = document.querySelector("#projects-list");
+  container.innerHTML = entries
+    .map((entry) => {
+      const media = extractMarkdownImage(entry.media);
+      const mediaHtml = media
+        ? `<img src="${media.src}" alt="${media.alt}" class="img-fluid paper-image">`
+        : '<img src="./assets/publication-placeholder.svg" alt="Project preview" class="img-fluid paper-image">';
+      const links = parseInlineLinks(entry.links);
+      const linkHtml = links
+        .map((link) => {
+          const url = link.url || "https://fyzhang1.github.io/";
+          return `<a class="project-link-pill" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${link.label}" title="${link.label}">${projectIconForLabel(link.label)}<span>${link.label}</span></a>`;
+        })
+        .join("");
+      const metricsHtml = entry.metrics
+        ? entry.metrics.split(",").map((metric) => `<span class="project-metric">${marked.parseInline(metric.trim())}</span>`).join("")
+        : "";
+      const typeHtml = entry.type ? `<span class="project-type">${marked.parseInline(entry.type)}</span>` : "";
+
+      return `
+        <div class="row publication-row project-row">
+          <div class="col-sm-4 publication-media">
+            ${mediaHtml}
+          </div>
+          <div class="col-sm-8 publication-copy">
+            <div class="paper-title">${entry.title}</div>
+            <div class="project-kicker">${typeHtml}${metricsHtml}</div>
+            <div class="paper-summary">${marked.parseInline(entry.description)}</div>
+            <div class="project-links">${linkHtml}</div>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+}
+
+function setupWorkTabs() {
+  const tabs = Array.from(document.querySelectorAll("[data-work-tab]"));
+  const panels = Array.from(document.querySelectorAll("[data-work-panel]"));
+
+  const activateTab = (target) => {
+    tabs.forEach((item) => {
+      const active = item.dataset.workTab === target;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    panels.forEach((panel) => {
+      const active = panel.dataset.workPanel === target;
+      panel.classList.toggle("active", active);
+      panel.hidden = !active;
+    });
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      activateTab(tab.dataset.workTab);
+    });
+  });
+
+  activateTab("papers");
+}
+
 function groupMarkdownToResearchList(markdown) {
   const lines = markdown.split("\n");
   const entries = [];
@@ -376,11 +458,12 @@ function groupMarkdownToResearchList(markdown) {
 
 async function init() {
   try {
-    const [profileRaw, aboutRaw, groupRaw, publicationsRaw, honorsRaw] = await Promise.all([
+    const [profileRaw, aboutRaw, groupRaw, publicationsRaw, projectsRaw, honorsRaw] = await Promise.all([
       fetchText(profilePath),
       fetchText(aboutPath),
       fetchText(groupPath),
       fetchText(publicationsPath),
+      fetchText(projectsPath),
       fetchText(honorsPath)
     ]);
 
@@ -394,14 +477,18 @@ async function init() {
     groupElement.innerHTML = groupMarkdownToResearchList(groupRaw);
 
     const publicationData = parsePublications(publicationsRaw);
+    const projectData = parsePublications(projectsRaw);
     renderPublicationIntro(publicationData.intro, publicationData.subtitle);
     renderPublications(publicationData.entries);
+    renderProjects(projectData.entries);
+    setupWorkTabs();
     renderMarkdown("#honors-content", honorsRaw);
   } catch (error) {
     const message = `Failed to load site content: ${error.message}`;
     document.querySelector("#about-content").textContent = message;
     document.querySelector("#group-content").textContent = message;
     document.querySelector("#publication-intro").textContent = message;
+    document.querySelector("#projects-list").textContent = message;
     document.querySelector("#honors-content").textContent = message;
   }
 }
