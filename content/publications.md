@@ -5,7 +5,7 @@
 
 ## DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents
 We introduce DualTAP, a dual-task adversarial protection framework for mobile MLLM agents that improves robustness against malicious visual instructions while preserving utility in real-world agent workflows.
-Venue: Arxiv 2025
+Venue: ECCV 2026
 Authors: **<u>Fuyao Zhang</u>**, Jiaming Zhang, Che Wang, Xiongtao Sun, Yurong Hao, Guowei Guan, Wenjie Li, Longtao Huang, Wei Yang Bryan Lim
 Media: ![Project One preview](./assets/dualtap.png)
 Note: [[Website]](https://fyzhang1.github.io/DualTAP/)
