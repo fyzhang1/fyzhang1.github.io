@@ -4,7 +4,7 @@
 ---
 
 ## DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents
-Venue: Arxiv 2025
+Venue: ECCV 2026
 Authors: **<u>Fuyao Zhang</u>**, Jiaming Zhang, Che Wang, Xiongtao Sun, Yurong Hao, Guowei Guan, Wenjie Li, Longtao Huang, Wei Yang Bryan Lim
 Media: ![Project One preview](./assets/dualtap.png)
 Note: [[Website]](https://fyzhang1.github.io/DualTAP/)
