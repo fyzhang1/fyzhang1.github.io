@@ -1,5 +1,5 @@
 ---
-name: Fuyao Zhang
+name: Fuyao Zhang (张富尧)
 navLabel: Fuyao Zhang
 portrait: ./assets/1.png
 roles:
