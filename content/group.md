@@ -1,4 +1,6 @@
-- 🎉 2026.06: One paper (DualTAP) are accepted by **ECCV 2026!**
+- 🎉 2026.07: One paper is accepted by **ACM MM 2026!**
+
+- 🎉 2026.06: One paper (DualTAP) is accepted by **ECCV 2026!**
 
 - 🎉 2026.04: Three papers are accepted by **ICML 2026!**
 
