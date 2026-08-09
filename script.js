@@ -4,7 +4,7 @@ const groupPath = "./content/group.md";
 const publicationsPath = "./content/publications.md";
 const projectsPath = "./content/projects.md";
 const honorsPath = "./content/honors.md";
-const contentVersion = "20260605-work-tabs";
+const contentVersion = "20260809-synchain";
 
 async function fetchText(path) {
   const separator = path.includes("?") ? "&" : "?";
@@ -132,6 +132,10 @@ function publicationLinkIcon(kind) {
 }
 
 function publicationIconLinks(entry) {
+  if (entry.noLinks) {
+    return [];
+  }
+
   const links = [
     ...parseInlineLinks(entry.note),
     ...parseInlineLinks(entry.links)
@@ -256,6 +260,7 @@ function parsePublications(markdown) {
         metrics: meta.metrics || "",
         links: meta.links || "",
         note: meta.note || "",
+        noLinks: /^(true|yes)$/i.test(meta.nolinks || ""),
         description: descriptionLines.join("\n")
       };
     })
@@ -300,7 +305,7 @@ function renderPublications(entries) {
           return `<a class="publication-link-icon" href="${link.url}" aria-label="${link.label}" title="${link.label}">${publicationLinkIcon(link.kind)}</a>`;
         })
         .join("");
-      const noteHtml = `<div class="publication-links">${linkHtml}</div>`;
+      const noteHtml = linkHtml ? `<div class="publication-links">${linkHtml}</div>` : "";
       const summaryHtml = entry.description
         ? `<div class="paper-summary">${marked.parseInline(entry.description)}</div>`
         : "";

@@ -3,6 +3,13 @@
 
 ---
 
+## SynChain: Inducing Computer-Use Agent Systems to Construct Their Own Attack Chains
+We introduce SynChain, a self-synthesized attack paradigm that induces computer-use agents to create benign-looking poisoned artifacts, allowing malicious influence to persist across tasks and reactivate through trusted skills and memory.
+Venue: arXiv, 2026
+Authors: **<u>Fuyao Zhang</u>**, Jiaming Zhang, Che Wang, Boyang Chen, Yurong Hao, Xiongtao Sun, Guowei Guan, Blaise Delattre, Yang Cao, Wei Yang Bryan Lim
+Media: ![SynChain overview](./assets/synchain.png)
+NoLinks: true
+
 ## DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents
 We introduce DualTAP, a dual-task adversarial protection framework for mobile MLLM agents that improves robustness against malicious visual instructions while preserving utility in real-world agent workflows.
 Venue: ECCV 2026
