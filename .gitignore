@@ -1,0 +1,3 @@
+
+# Keep unpublished paper PDFs out of the public website.
+/ExpActivator/assets/*.pdf
