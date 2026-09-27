@@ -6,8 +6,9 @@
 ## Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents
 We introduce ExpActivator, a training-free framework that activates applicable experiences for personalized GUI task execution and proactive suggestions.
 Authors: Fuyao Zhang, Xuan Wang, Zherui Li, Jiaming Zhang, Longtao Huang, Wei Yang Bryan Lim
+PaperPending: true
 Media: ![ExpActivator framework](./ExpActivator/assets/method.png)
-Note: [[Website]](https://fyzhang1.github.io/ExpActivator/), [[PDF]](https://fyzhang1.github.io/ExpActivator/assets/ExpActivator.pdf), [[Code]](https://github.com/fyzhang1/ExpActivator)
+Note: [[Website]](https://fyzhang1.github.io/ExpActivator/), [[Code]](https://github.com/fyzhang1/ExpActivator)
 
 ## DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents
 Venue: ECCV 2026

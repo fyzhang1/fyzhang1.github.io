@@ -141,7 +141,7 @@ function publicationIconLinks(entry) {
     {
       kind: "paper",
       label: "Paper",
-      url: findUrl(/pdf|paper|arxiv/i) || fallbackUrl
+      url: findUrl(/pdf|paper|arxiv/i) || (entry.paperPending ? "" : fallbackUrl)
     },
     {
       kind: "website",
@@ -251,6 +251,7 @@ function parsePublications(markdown) {
         media: meta.media || "",
         links: meta.links || "",
         note: meta.note || "",
+        paperPending: /^(true|yes)$/i.test(meta.paperpending || ""),
         description: descriptionLines.join("\n")
       };
     })
@@ -292,6 +293,7 @@ function renderPublications(entries) {
 
       const linkHtml = publicationIconLinks(entry)
         .map((link) => {
+          if (!link.url) return `<span class="publication-link-icon" aria-disabled="true" aria-label="${link.label} coming soon" title="${link.label} coming soon">${publicationLinkIcon(link.kind)}</span>`;
           return `<a class="publication-link-icon" href="${link.url}" aria-label="${link.label}" title="${link.label}">${publicationLinkIcon(link.kind)}</a>`;
         })
         .join("");

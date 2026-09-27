@@ -17,7 +17,7 @@ Open http://127.0.0.1:8087/ExpActivator/.
 - `index.html`: paper title, authors, method, abstract, case study, and BibTeX.
 - `styles.css`: responsive layout and sans-serif typography.
 - `script.js`: Table 1 data, a swipeable three-slide results carousel, and citation copying.
-- `assets/ExpActivator.pdf`: the supplied paper, copied without modification.
+- The paper PDF is not included. Paper controls remain unavailable until the author provides a public link.
 - `assets/method.png` and `assets/case-study.png`: rendered from the paper's source figures.
 
 No build step or third-party runtime dependencies are required. Keep this directory at `/ExpActivator/` when publishing through the existing GitHub Pages setup. Citation metadata uses the title and authors in the supplied PDF and its project URL; no venue or arXiv identifier was inferred from the input filename.
