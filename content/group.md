@@ -1,3 +1,7 @@
+- 🎉 2026.09: Two papers are accepted by **NeurIPS!**
+
+- 🎉 2026.09: One paper is accepted by **NDSS!**
+
 - 🎉 2026.07: One paper is accepted by **ACM MM 2026!**
 
 - 🎉 2026.06: One paper (DualTAP) is accepted by **ECCV 2026!**
