@@ -10,6 +10,7 @@ All displayed information lives in Markdown:
 - `content/about.md`
 - `content/group.md`
 - `content/publications.md`
+- `content/full-publications.md`: compact full bibliography with complete author lists
 
 ## Preview Locally
 
