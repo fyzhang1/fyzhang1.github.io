@@ -17,10 +17,10 @@ Open http://127.0.0.1:8087/ExpActivator/.
 - `index.html`: paper title, authors, method, abstract, case study, and BibTeX.
 - `styles.css`: responsive layout and sans-serif typography.
 - `script.js`: Table 1 data, a swipeable three-slide results carousel, and citation copying.
-- The paper PDF is not included. Paper controls remain unavailable until the author provides a public link.
+- The paper PDF is not included. Paper controls link to https://arxiv.org/abs/2609.33304, supplied by the author.
 - `assets/method.png` and `assets/case-study.png`: rendered from the paper's source figures.
 
-No build step or third-party runtime dependencies are required. Keep this directory at `/ExpActivator/` when publishing through the existing GitHub Pages setup. Citation metadata uses the title and authors in the supplied PDF and its project URL; no venue or arXiv identifier was inferred from the input filename.
+No build step or third-party runtime dependencies are required. Keep this directory at `/ExpActivator/` when publishing through the existing GitHub Pages setup. Citation metadata uses the title and authors in the supplied PDF and its project URL; The arXiv identifier 2609.33304 was provided by the author and verified against the public abstract page.
 
 Public URL: https://fyzhang1.github.io/ExpActivator/. This directory is published alongside DualTAP and Oblivionis in fyzhang1/fyzhang1.github.io. The Code resource box links to https://github.com/fyzhang1/ExpActivator, supplied by the author.
 
@@ -37,4 +37,6 @@ The opening-versus-following-steps comparison reproduces Table 2. Original scree
 
 ## Page layout
 
-The layout follows the centered academic presentation of https://jiamingzhang.netlify.app/lgwm/: headline and subtitle, author affiliations, resource pills, headline metrics, a wide framework figure, and a narrow reading column. Arial, a pure black background, white text, blue accents, the results carousel, and both interactive phone simulations are retained. The Paper resource remains unavailable and no PDF is published.
+The layout follows the centered academic presentation of https://jiamingzhang.netlify.app/lgwm/: headline and subtitle, author affiliations, resource pills, headline metrics, a wide framework figure, and a narrow reading column. Arial, a pure black background, white text, blue accents, the results carousel, and both interactive phone simulations are retained. The Paper resource links to arXiv; no PDF is uploaded to this repository.
+
+The project uses a black-and-white angular activation mark, shared by the favicon, header, and phone simulation.

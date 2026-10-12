@@ -237,3 +237,6 @@ footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .paper-layout .sim-progress{background:#303640}
 .paper-layout .simulation-disclosure{color:#959ca7}
 .paper-layout .iphone{box-shadow:inset 0 0 0 2px #36383d,inset 0 0 0 4px #0e0f11,0 0 32px #ffffff0d}
+
+.project-name{display:flex;align-items:center;justify-content:center;gap:9px}
+.project-name>img{width:28px;height:28px;flex-shrink:0}
