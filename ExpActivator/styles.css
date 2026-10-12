@@ -21,7 +21,7 @@ img{display:block;max-width:100%;height:auto}
 h1{max-width:740px;margin-inline:auto;font-size:clamp(32px,5.4vw,50px);font-weight:700;line-height:1.08;letter-spacing:-1.7px;text-wrap:balance}
 h1>span{display:block}
 h1>span+span{margin-top:24px;font-size:24px;line-height:1.3;letter-spacing:-.35px;font-weight:400;color:var(--muted)}
-.authors{display:grid;grid-template-columns:repeat(3,max-content);justify-content:center;gap:3px 18px;max-width:640px;margin:30px auto 0;font-size:17px;line-height:1.6}
+.authors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));justify-content:center;gap:8px 20px;max-width:660px;margin:30px auto 0;font-size:17px;line-height:1.6}
 .authors>a,.authors>span{white-space:nowrap}
 .authors a{color:var(--ink);text-decoration:none}
 .authors a:hover{color:var(--accent)}
@@ -46,7 +46,7 @@ a.resource-box[aria-disabled=true]:hover{border-color:var(--line)}
 .metrics strong span{font-size:.75em}
 .metrics p{margin-top:8px;font-size:14px;line-height:1.45;color:var(--muted)}
 .metrics small{display:block;margin-top:6px;font-size:12px;line-height:1.5;color:var(--muted)}
-.paper-teaser{margin-top:56px}
+.paper-teaser{max-width:960px;margin-top:56px}
 .method-figure img{width:100%;border-radius:10px;background:white}
 figcaption{max-width:700px;margin:16px auto 0;font-size:14.5px;line-height:1.6;color:var(--muted);text-align:center;text-wrap:pretty}
 figcaption>span{font-weight:600;color:var(--ink);margin-right:5px}
@@ -184,7 +184,7 @@ footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media(max-width:720px){
  body{font-size:16px}.hero{padding-top:52px}
  h1{font-size:36px;letter-spacing:-1.1px}h1>span+span{font-size:21px;margin-top:20px}
- .authors{font-size:15px;gap:3px 14px;max-width:500px}
+ .authors{font-size:15px;gap:8px 14px;max-width:500px}
  .affiliation{font-size:13px;gap:3px 12px}
  .hero-lede{font-size:17.5px}
  .metrics{margin:48px 20px 0;padding:0}.metrics>div{padding:22px 12px}.metrics strong{font-size:28px}.metrics p{font-size:12px}.metrics small{font-size:10px}
@@ -211,9 +211,9 @@ footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
  pre{font-size:11px;padding:16px}
  footer{margin-top:60px;font-size:12px}
 }
-@media(max-width:560px){.authors{grid-template-columns:repeat(2,max-content)}}
+@media(max-width:560px){.authors{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:360px){
- .authors{display:flex;flex-wrap:wrap;font-size:14px}
+ .authors{font-size:12px;column-gap:8px}
  h1{font-size:30px}.hero-lede{font-size:16px}.metrics>div{padding:20px 7px}.metrics strong{font-size:25px}
  .slide-summary{grid-template-columns:75px minmax(0,1fr);column-gap:12px}.slide-number{font-size:38px}
  .slide-main{min-height:630px}.result-slide{padding-inline:16px}.chart-note{min-height:130px}.carousel-dots{display:none}
@@ -240,3 +240,5 @@ footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 
 .project-name{display:flex;align-items:center;justify-content:center;gap:9px}
 .project-name>img{width:28px;height:28px;flex-shrink:0}
+
+.resource-box .github-icon{fill:currentColor;stroke:none}
