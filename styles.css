@@ -767,3 +767,12 @@ h1 {
     gap: 12px;
   }
 }
+
+/* Compact full bibliography: title and complete author list only. */
+.full-publication-list>p{margin:0 0 24px;font-size:15px;line-height:1.6;color:#515b68}
+.full-publication-list>p>strong:first-child{display:inline-block;margin-bottom:4px;font-size:16px;line-height:1.45;font-weight:700;color:#111}
+.full-publication-list strong{font-weight:800;color:#28313b}
+.full-publication-list u{white-space:nowrap;text-underline-offset:3px;text-decoration-thickness:1px}
+@media(max-width:640px){.full-publication-list>p{font-size:14px;margin-bottom:22px}.full-publication-list>p>strong:first-child{font-size:15px}}
+
+#full-publications{scroll-margin-top:80px}

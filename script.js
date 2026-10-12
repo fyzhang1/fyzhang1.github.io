@@ -1,3 +1,4 @@
+const fullPublicationsPath = "./content/full-publications.md";
 const profilePath = "./content/profile.md";
 const aboutPath = "./content/about.md";
 const groupPath = "./content/group.md";
@@ -465,13 +466,14 @@ function groupMarkdownToResearchList(markdown) {
 
 async function init() {
   try {
-    const [profileRaw, aboutRaw, groupRaw, publicationsRaw, projectsRaw, honorsRaw] = await Promise.all([
+    const [profileRaw, aboutRaw, groupRaw, publicationsRaw, projectsRaw, honorsRaw, fullPublicationsRaw] = await Promise.all([
       fetchText(profilePath),
       fetchText(aboutPath),
       fetchText(groupPath),
       fetchText(publicationsPath),
       fetchText(projectsPath),
-      fetchText(honorsPath)
+      fetchText(honorsPath),
+      fetchText(fullPublicationsPath)
     ]);
 
     const profile = parseProfile(profileRaw);
@@ -490,6 +492,7 @@ async function init() {
     renderProjects(projectData.entries);
     setupWorkTabs();
     renderMarkdown("#honors-content", honorsRaw);
+    renderMarkdown("#full-publications-list", fullPublicationsRaw);
   } catch (error) {
     const message = `Failed to load site content: ${error.message}`;
     document.querySelector("#about-content").textContent = message;
@@ -497,6 +500,7 @@ async function init() {
     document.querySelector("#publication-intro").textContent = message;
     document.querySelector("#projects-list").textContent = message;
     document.querySelector("#honors-content").textContent = message;
+    document.querySelector("#full-publications-list").textContent = message;
   }
 }
 
