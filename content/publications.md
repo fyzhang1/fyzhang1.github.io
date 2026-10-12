@@ -6,9 +6,8 @@
 ## Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents
 We introduce ExpActivator, a training-free framework that activates applicable experiences for personalized GUI task execution and proactive suggestions.
 Authors: Fuyao Zhang, Xuan Wang, Zherui Li, Jiaming Zhang, Longtao Huang, Wei Yang Bryan Lim
-PaperPending: true
 Media: ![ExpActivator framework](./ExpActivator/assets/method.png)
-Note: [[Website]](https://fyzhang1.github.io/ExpActivator/), [[Code]](https://github.com/fyzhang1/ExpActivator)
+Note: [[Website]](https://fyzhang1.github.io/ExpActivator/), [[Paper]](https://arxiv.org/abs/2609.33304), [[Code]](https://github.com/fyzhang1/ExpActivator)
 
 ## SynChain: Inducing Computer-Use Agent Systems to Construct Their Own Attack Chains
 We introduce SynChain, a self-synthesized attack paradigm that induces computer-use agents to create benign-looking poisoned artifacts, allowing malicious influence to persist across tasks and reactivate through trusted skills and memory.

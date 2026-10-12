@@ -6,7 +6,7 @@
   const cup = '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M12 17h24l-3 26H15z" fill="#d6bb97"/><path d="M10 13h28v5H10z" fill="#805c42"/><path d="M14 9h20l4 4H10z" fill="#ac8663"/><path d="M25 3l-3 27" stroke="#fff" stroke-width="3"/><path d="M14 27h20l-1 9H15z" fill="#f8f4eb"/></svg>';
   const sun = '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="13" fill="#ffd677"/><path d="M32 3v8m0 42v8M3 32h8m42 0h8M11 11l6 6m30 30 6 6M11 53l6-6m30-30 6-6" stroke="#ffd677" stroke-width="3" stroke-linecap="round"/></svg>';
   const cloud = '<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M15 36a12 12 0 0 1-1-24 17 17 0 0 1 32-2 13 13 0 1 1 4 26z" fill="#fff"/><path d="M20 41l-3 5m17-5-3 5m17-5-3 5" stroke="#a3d8ff" stroke-width="3" stroke-linecap="round"/></svg>';
-  const agentIcon = '<span class="agent-icon">E<span>·</span></span>';
+  const agentIcon = '<span class="agent-icon" aria-hidden="true"><img src="assets/favicon.svg?v=2" alt=""></span>';
   const nav = (title, right='') => `<div class="app-nav"><span class="nav-back">‹</span><strong>${title}</strong><span>${right}</span></div>`;
   const agentBar = text => `<div class="agent-pill">${agentIcon}<span>${text}</span><i class="thinking-dots"><b></b><b></b><b></b></i></div>`;
   const coffeeNav = '<div class="coffee-tabbar"><span class="active">⌂<small>Order</small></span><span>♡<small>Favorites</small></span><span>◷<small>Activity</small></span><span>◎<small>Account</small></span></div>';
