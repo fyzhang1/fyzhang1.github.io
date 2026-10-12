@@ -34,3 +34,7 @@ Typography uses Arial throughout the page, citation block, and phone simulations
 These are clearly labeled illustrative simulations. The coffee example is motivated by the paper; the proactive 08:05 weather routine is reported in Figure 5. The app interfaces, preferences, prices, and weather values are fictional demo data. No model runs, orders, payments, or external requests are made by the simulations. The actual paper figures remain in the method and case-study sections.
 
 The opening-versus-following-steps comparison reproduces Table 2. Original screen extracts remain in `assets/screens/`.
+
+## Page layout
+
+The layout follows the centered academic presentation of https://jiamingzhang.netlify.app/lgwm/: headline and subtitle, author affiliations, resource pills, headline metrics, a wide framework figure, and a narrow reading column. Arial, a pure black background, white text, blue accents, the results carousel, and both interactive phone simulations are retained. The Paper resource remains unavailable and no PDF is published.
