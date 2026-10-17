@@ -145,7 +145,7 @@ function publicationIconLinks(entry) {
   const firstUrl = links.find((link) => link.url)?.url || "";
   const fallbackUrl = findUrl(/website|project|demo|page/i) || firstUrl || "https://fyzhang1.github.io/";
 
-  return [
+  const iconLinks = [
     {
       kind: "paper",
       label: "Paper",
@@ -162,6 +162,7 @@ function publicationIconLinks(entry) {
       url: findUrl(/code|github/i) || fallbackUrl
     }
   ];
+  return entry.linksOnly?.length ? iconLinks.filter(link => entry.linksOnly.includes(link.kind)) : iconLinks;
 }
 
 function renderProfile(profile) {
@@ -261,6 +262,7 @@ function parsePublications(markdown) {
         metrics: meta.metrics || "",
         links: meta.links || "",
         note: meta.note || "",
+        linksOnly: (meta.linksonly || "").toLowerCase().split(",").map(kind => kind.trim()).filter(Boolean),
         paperPending: /^(true|yes)$/i.test(meta.paperpending || ""),
         noLinks: /^(true|yes)$/i.test(meta.nolinks || ""),
         description: descriptionLines.join("\n")
@@ -484,6 +486,20 @@ async function init() {
     const groupElement = document.querySelector("#group-content");
     groupElement.classList.remove("loading-copy");
     groupElement.innerHTML = groupMarkdownToResearchList(groupRaw);
+    const newsList = groupElement.querySelector('.research-list');
+    const earlierNews = [...newsList.children].slice(4);
+    if (earlierNews.length) {
+      const archive = document.createElement('details');
+      archive.className = 'news-archive';
+      const summary = document.createElement('summary');
+      summary.textContent = 'Earlier news';
+      const archiveList = document.createElement('ul');
+      archiveList.className = 'research-list';
+      earlierNews.forEach(item => archiveList.append(item));
+      archive.append(summary, archiveList);
+      groupElement.append(archive);
+    }
+
 
     const publicationData = parsePublications(publicationsRaw);
     const projectData = parsePublications(projectsRaw);

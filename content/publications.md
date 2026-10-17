@@ -5,7 +5,7 @@
 
 ## Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents
 We introduce ExpActivator, a training-free framework that activates applicable experiences for personalized GUI task execution and proactive suggestions.
-Authors: Fuyao Zhang, Xuan Wang, Zherui Li, Jiaming Zhang, Longtao Huang, Wei Yang Bryan Lim
+Authors: **<u>Fuyao Zhang</u>**, Xuan Wang, Zherui Li, Jiaming Zhang, Longtao Huang, Wei Yang Bryan Lim
 Media: ![ExpActivator framework](./ExpActivator/assets/method.png)
 Note: [[Website]](https://fyzhang1.github.io/ExpActivator/), [[Paper]](https://arxiv.org/abs/2609.33304), [[Code]](https://github.com/fyzhang1/ExpActivator)
 
@@ -14,7 +14,8 @@ We introduce SynChain, a self-synthesized attack paradigm that induces computer-
 Venue: arXiv, 2026
 Authors: **<u>Fuyao Zhang</u>**, Jiaming Zhang, Che Wang, Boyang Chen, Yurong Hao, Xiongtao Sun, Guowei Guan, Blaise Delattre, Yang Cao, Wei Yang Bryan Lim
 Media: ![SynChain overview](./assets/synchain.png)
-NoLinks: true
+LinksOnly: paper
+Note: [[Paper]](https://arxiv.org/abs/2608.06862)
 
 ## DualTAP: A Dual-Task Adversarial Protector for Mobile MLLM Agents
 We introduce DualTAP, a dual-task adversarial protection framework for mobile MLLM agents that improves robustness against malicious visual instructions while preserving utility in real-world agent workflows.

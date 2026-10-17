@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Personal Homepage</title>
+    <title>Fuyao Zhang</title>
     <meta
       name="description"
-      content="Markdown-driven personal homepage styled after a clean academic website."
+      content="Fuyao Zhang is a PhD student at Nanyang Technological University. Research in agentic AI, multimodal learning, and trustworthy AI."
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     />
     <link rel="icon" type="image/svg+xml" href="./assets/site-icon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261012-full-publications" />
+    <link rel="stylesheet" href="./styles.css?v=20261017-refresh" />
   </head>
   <body>
     <a id="home"></a>
@@ -32,43 +32,33 @@
           <div class="navleft text"><a id="nav-home-link" href="#home">Home</a></div>
           <div class="navright-group">
             <div class="navright text"><a href="#publications">Research</a></div>
-            <div class="navright text"><a href="#home">Home</a></div>
+            <div class="navright text"><a href="#full-publications">Publications</a></div>
           </div>
         </div>
       </header>
 
-      <div id="header">
-        <div class="container">
-          <div class="row spacer-row"><p></p></div>
-          <div class="row spacer-row"><p></p></div>
-          <div class="row spacer-row"><p></p></div>
-          <div class="row spacer-row"><p></p></div>
-          <div class="row">
-            <div class="col-sm-3 offset-sm-2">
-              <img id="portrait" class="img-fluid" src="./assets/profile-placeholder.svg" alt="Portrait" />
-            </div>
-            <div class="col-sm-5 offset-sm-1">
-              <div id="header-text-name">Name</div>
-              <p></p>
-              <div id="header-roles"></div>
-              <br />
-              <div id="header-emails" class="header-text-email"></div>
-              <p></p>
-              <div id="header-links"></div>
-            </div>
+      <div id="header" class="profile-intro">
+        <div class="container profile-grid">
+          <div class="profile-copy">
+            <p class="profile-kicker">Academic homepage</p>
+            <div class="profile-name"><h1 id="header-text-name">Fuyao Zhang</h1><span class="native-name" lang="zh">张富尧</span></div>
+            <div id="header-roles"></div>
+            <div id="header-emails" class="header-text-email"></div>
+            <div id="header-links"></div>
           </div>
+          <div class="portrait-frame"><img id="portrait" src="./assets/1.png" alt="Fuyao Zhang portrait" width="639" height="639"></div>
         </div>
       </div>
 
       <div class="container">
         <section class="container lead">
-          <div class="vspace-top section-copy content-column">
-            <h1>About Me</h1>
+          <div class="vspace-top section-copy content-column biography" id="about">
+            <h1>About</h1>
             <div id="about-content" class="markdown-content loading-copy">Loading content...</div>
             <div id="about-note" class="important-note"></div>
           </div>
 
-          <div class="vspace-top section-copy content-column">
+          <div class="vspace-top section-copy content-column news-section" id="news">
             <h1>News</h1>
             <div id="group-content" class="markdown-content loading-copy">Loading content...</div>
           </div>
@@ -153,6 +143,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="./script.js?v=20261012-full-publications" type="module"></script>
+    <script src="./script.js?v=20261017-refresh" type="module"></script>
   </body>
 </html>

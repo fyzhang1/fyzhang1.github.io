@@ -1,10 +1,10 @@
 ---
-name: Fuyao Zhang (张富尧)
+name: Fuyao Zhang
 navLabel: Fuyao Zhang
 portrait: ./assets/1.png
 roles:
   - PhD Student, Nanyang Technological University
-  - Agent, MLLM, Trustworthy AI
+  - College of Computing and Data Science
 emails:
   - hi.fyzhang[at]gmail[dot]com
   - fuyao.zhang[at]ntu[dot]edu[dot]sg
