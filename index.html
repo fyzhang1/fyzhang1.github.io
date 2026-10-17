@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Personal Homepage</title>
+    <title>Fuyao Zhang</title>
     <meta
       name="description"
-      content="Markdown-driven personal homepage styled after a clean academic website."
+      content="Fuyao Zhang is a PhD student at Nanyang Technological University. Research in agentic AI, multimodal learning, and trustworthy AI."
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     />
     <link rel="icon" type="image/svg+xml" href="./assets/site-icon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261012-full-publications" />
+    <link rel="stylesheet" href="./styles.css?v=20261017-refresh" />
   </head>
   <body>
     <a id="home"></a>
@@ -32,43 +32,33 @@
           <div class="navleft text"><a id="nav-home-link" href="#home">Home</a></div>
           <div class="navright-group">
             <div class="navright text"><a href="#publications">Research</a></div>
-            <div class="navright text"><a href="#home">Home</a></div>
+            <div class="navright text"><a href="#full-publications">Publications</a></div>
           </div>
         </div>
       </header>
 
-      <div id="header">
-        <div class="container">
-          <div class="row spacer-row"><p></p></div>
-          <div class="row spacer-row"><p></p></div>
-          <div class="row spacer-row"><p></p></div>
-          <div class="row spacer-row"><p></p></div>
-          <div class="row">
-            <div class="col-sm-3 offset-sm-2">
-              <img id="portrait" class="img-fluid" src="./assets/profile-placeholder.svg" alt="Portrait" />
-            </div>
-            <div class="col-sm-5 offset-sm-1">
-              <div id="header-text-name">Name</div>
-              <p></p>
-              <div id="header-roles"></div>
-              <br />
-              <div id="header-emails" class="header-text-email"></div>
-              <p></p>
-              <div id="header-links"></div>
-            </div>
+      <div id="header" class="profile-intro">
+        <div class="container profile-grid">
+          <div class="profile-copy">
+            <p class="profile-kicker">Academic homepage</p>
+            <div class="profile-name"><h1 id="header-text-name">Fuyao Zhang</h1><span class="native-name" lang="zh">张富尧</span></div>
+            <div id="header-roles"></div>
+            <div id="header-emails" class="header-text-email"></div>
+            <div id="header-links"></div>
           </div>
+          <div class="portrait-frame"><img id="portrait" src="./assets/1.png" alt="Fuyao Zhang portrait" width="639" height="639"></div>
         </div>
       </div>
 
       <div class="container">
         <section class="container lead">
-          <div class="vspace-top section-copy content-column">
-            <h1>About Me</h1>
+          <div class="vspace-top section-copy content-column biography" id="about">
+            <h1>About</h1>
             <div id="about-content" class="markdown-content loading-copy">Loading content...</div>
             <div id="about-note" class="important-note"></div>
           </div>
 
-          <div class="vspace-top section-copy content-column">
+          <div class="vspace-top section-copy content-column news-section" id="news">
             <h1>News</h1>
             <div id="group-content" class="markdown-content loading-copy">Loading content...</div>
           </div>
@@ -77,9 +67,18 @@
             <a id="publications"></a>
             <h1>Selected Works</h1>
             <div id="publication-intro" class="publication-intro loading-copy">Loading content...</div>
+            <div class="work-tabs" role="tablist" aria-label="Selected works categories">
+              <button class="work-tab active" type="button" data-work-tab="papers" role="tab" aria-selected="true" autocomplete="off">
+                Papers
+              </button>
+              <button class="work-tab" type="button" data-work-tab="projects" role="tab" aria-selected="false" autocomplete="off">
+                Datasets & Projects
+              </button>
+            </div>
           </div>
 
-          <div id="publications-list"><p><a href="/ExpActivator/">Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents</a></p></div>
+          <div id="publications-list" class="works-panel active" data-work-panel="papers"><p><a href="/ExpActivator/">Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents</a></p></div>
+          <div id="projects-list" class="works-panel" data-work-panel="projects"></div>
 
           <section class="vspace-top section-copy content-column" id="full-publications" aria-labelledby="full-publications-title">
             <h1 id="full-publications-title">Full Publications</h1>
@@ -91,6 +90,51 @@
             <div id="honors-content" class="markdown-content loading-copy">Loading content...</div>
           </div>
 
+          <div class="vspace-top section-copy content-column">
+            <a id="experience"></a>
+            <h1>Experience</h1>
+            <div class="experience-list">
+              <div class="experience-item">
+                <div class="experience-logo-wrap">
+                  <img class="experience-logo" src="./assets/ntu-crest.png" alt="Nanyang Technological University logo" />
+                </div>
+                <div class="experience-copy">
+                  <div class="experience-school">Nanyang Technological University</div>
+                  <div class="experience-time">2025 - Now</div>
+                  <div class="experience-desc">
+                    Ph.D. Student at College of Computing and Data Science.
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-logo-wrap">
+                  <img class="experience-logo" src="./assets/heriot-watt-crest.png" alt="Heriot-Watt University logo" />
+                </div>
+                <div class="experience-copy">
+                  <div class="experience-school">Heriot-Watt University</div>
+                  <div class="experience-time">2024 - 2025</div>
+                  <div class="experience-desc">
+                    Undergraduate exchange student.
+                  </div>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-logo-wrap">
+                  <img class="experience-logo" src="./assets/xidian-logo.png" alt="Xidian University logo" />
+                </div>
+                <div class="experience-copy">
+                  <div class="experience-school">Xidian University</div>
+                  <div class="experience-time">2021 - 2025</div>
+                  <div class="experience-desc">
+                    B.Eng. at School of Telecommunications Engineering.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="vspace-top footer-note">
             <span id="last-updated"></span> <a href="#home">Back to Top</a>
           </div>
@@ -99,6 +143,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="./script.js?v=20261012-full-publications" type="module"></script>
+    <script src="./script.js?v=20261017-refresh" type="module"></script>
   </body>
 </html>

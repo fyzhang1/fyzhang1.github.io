@@ -2,7 +2,7 @@
 
 - 🎉 2026.09: One paper is accepted by **NDSS!**
 
-- 🎉 2026.07: One paper is accepted by **ACM MM 2026!**
+- 🎉 2026.07: One paper is accepted by ACM MM 2026!
 
 - 🎉 2026.06: One paper (DualTAP) is accepted by **ECCV 2026!**
 
@@ -14,4 +14,4 @@
 
 - 🌟 2025.08: We officially released [Oblivionis](https://arxiv.org/abs/2508.08875).
 
-- 🎉 2025.08: One paper on federated learning accepted by **IEEE TMC!**
+- 🎉 2025.08: One paper on federated learning is accepted by **IEEE TMC!**
