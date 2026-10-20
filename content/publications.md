@@ -19,7 +19,7 @@ Note: [[Website]](https://fyzhang1.github.io/ExpActivator/), [[Paper]](https://a
 We introduce SynChain, a self-synthesized attack paradigm that induces computer-use agents to create benign-looking poisoned artifacts, allowing malicious influence to persist across tasks and reactivate through trusted skills and memory.
 Venue: arXiv, 2026
 Authors: **<u>Fuyao Zhang</u>**, Jiaming Zhang, Che Wang, Boyang Chen, Yurong Hao, Xiongtao Sun, Guowei Guan, Blaise Delattre, Yang Cao, Wei Yang Bryan Lim
-Media: ![SynChain overview](./assets/synchain.png)
+Media: ![SynChain multi-screen task workflow demo](./assets/synchain-demo.mp4)
 LinksOnly: paper
 Note: [[Paper]](https://arxiv.org/abs/2608.06862)
 
