@@ -12,7 +12,7 @@ Note: [[Website]](https://fyzhang1.github.io/FocusGUI/), [[Paper]](https://arxiv
 ## Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents
 We introduce ExpActivator, a training-free framework that activates applicable experiences for personalized GUI task execution and proactive suggestions.
 Authors: **<u>Fuyao Zhang</u>**, Xuan Wang, Zherui Li, Jiaming Zhang, Longtao Huang, Wei Yang Bryan Lim
-Media: ![ExpActivator framework](./ExpActivator/assets/method.png)
+Media: ![ExpActivator personalized execution and proactive suggestion demo](./ExpActivator/assets/demo.mp4)
 Note: [[Website]](https://fyzhang1.github.io/ExpActivator/), [[Paper]](https://arxiv.org/abs/2609.33304), [[Code]](https://github.com/fyzhang1/ExpActivator)
 
 ## SynChain: Inducing Computer-Use Agent Systems to Construct Their Own Attack Chains
