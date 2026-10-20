@@ -4,7 +4,7 @@ Static website for **Focused Omni-Modal GUI Agents**, adapted from the HybridCUA
 
 Preview from the workspace root with `python3 -m http.server 8087`, then open http://127.0.0.1:8087/FocusGUI/ . No build step or external JavaScript dependencies.
 
-Authors and affiliations are taken from the supplied named manuscript (`Focused_Omni_Modal_GUI_Agents_Midori/main.pdf`). Code: https://github.com/fyzhang1/FocusGUI . The paper URL is pending. BibTeX is intentionally blank at the author’s request. No manuscript PDF is included in the website.
+Authors and affiliations are taken from the supplied named manuscript (`Focused_Omni_Modal_GUI_Agents_Midori/main.pdf`). Code: https://github.com/fyzhang1/FocusGUI . Paper: https://arxiv.org/abs/2610.26203 . BibTeX records the arXiv identifier, complete author list, year, and subject class. No manuscript PDF is included in the website.
 
 Figures are cropped from Figures 1–5 of the supplied manuscript. The case-study panels are paper illustrations, not recordings. `leaderboard.json` transcribes Tables 1–2; metric order is Type Match, Exact Match, Goal Progress for each listed category.
 
