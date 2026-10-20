@@ -887,4 +887,9 @@ a:hover,.markdown-content a:hover,.publication-intro a:hover,.paper-author a:hov
 .publication-link-icon,.publication-link-icon:visited,.project-link,.project-link:visited{color:var(--page-link)}
 .publication-link-icon:hover,.project-link:hover{color:#394f6c}
 
-#publications-list .publication-media video {background:#000;}
+/* Match the video’s native ratio without letterboxing or cropping. */
+#publications-list .publication-media video {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: transparent;
+}
