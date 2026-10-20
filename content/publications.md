@@ -6,7 +6,7 @@
 ## Focused Omni-Modal GUI Agents
 We introduce FocusGUI, a lightweight adapter that prioritizes multimodal evidence at each decision step to improve frozen omni-modal GUI agents.
 Authors: **<u>Fuyao Zhang</u>**, Wenwen He, Jiaming Zhang, Yurong Hao, Xuan Wang, Guowei Guan, Che Wang, Longtao Huang, Wei Yang Bryan Lim
-Media: ![FocusGUI framework](./FocusGUI/assets/teaser.png)
+Media: ![FocusGUI parallel-phone demo](./FocusGUI/assets/demo.mp4)
 Note: [[Website]](https://fyzhang1.github.io/FocusGUI/), [[Paper]](https://arxiv.org/abs/2610.26203), [[Code]](https://github.com/fyzhang1/FocusGUI)
 
 ## Relevance Does Not Imply Applicability: Experience Activation for Personal GUI Agents

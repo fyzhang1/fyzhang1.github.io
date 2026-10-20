@@ -886,3 +886,5 @@ a,a:visited,.markdown-content a,.markdown-content a:visited,.publication-intro a
 a:hover,.markdown-content a:hover,.publication-intro a:hover,.paper-author a:hover,#header-links a:hover,#publications-list a:hover,.research-list a:hover,.footer-note a:hover{color:#394f6c;text-decoration-color:#a1afc1;text-underline-offset:3px}
 .publication-link-icon,.publication-link-icon:visited,.project-link,.project-link:visited{color:var(--page-link)}
 .publication-link-icon:hover,.project-link:hover{color:#394f6c}
+
+#publications-list .publication-media video {background:#000;}

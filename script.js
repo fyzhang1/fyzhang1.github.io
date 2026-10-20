@@ -300,9 +300,12 @@ function renderPublications(entries) {
   container.innerHTML = entries
     .map((entry) => {
       const media = extractMarkdownImage(entry.media);
-      const mediaHtml = media
-        ? `<img src="${media.src}" alt="${media.alt}" class="img-fluid paper-image">`
-        : '<img src="./assets/publication-placeholder.svg" alt="Publication preview" class="img-fluid paper-image">';
+      const isVideo = media && /\.(mp4|webm)(?:[?#]|$)/i.test(media.src);
+      const mediaHtml = isVideo
+        ? `<video class="img-fluid paper-video" src="${media.src}" poster="${media.src.replace(/\.(mp4|webm)(?:[?#].*)?$/i, "-poster.jpg")}" aria-label="${media.alt}" autoplay muted loop playsinline controls preload="metadata"></video>`
+        : media
+          ? `<img src="${media.src}" alt="${media.alt}" class="img-fluid paper-image">`
+          : '<img src="./assets/publication-placeholder.svg" alt="Publication preview" class="img-fluid paper-image">';
 
       const linkHtml = publicationIconLinks(entry)
         .map((link) => {
