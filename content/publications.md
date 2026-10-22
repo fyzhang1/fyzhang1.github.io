@@ -4,6 +4,7 @@
 ---
 
 ## Focused Omni-Modal GUI Agents
+Venue: **🥇 Rank #1 Paper of the Day on Hugging Face Daily Papers**
 We introduce FocusGUI, a lightweight adapter that prioritizes multimodal evidence at each decision step to improve frozen omni-modal GUI agents.
 Authors: **<u>Fuyao Zhang</u>**, Wenwen He, Jiaming Zhang, Yurong Hao, Xuan Wang, Guowei Guan, Che Wang, Longtao Huang, Wei Yang Bryan Lim
 Media: ![FocusGUI multi-app task execution and method demonstration](./FocusGUI/assets/promo-56s.mp4)
