@@ -28,7 +28,7 @@ Note: [[Paper]](https://arxiv.org/abs/2608.06862)
 We introduce DualTAP, a dual-task adversarial protection framework for mobile MLLM agents that improves robustness against malicious visual instructions while preserving utility in real-world agent workflows.
 Venue: ECCV 2026
 Authors: **<u>Fuyao Zhang</u>**, Jiaming Zhang, Che Wang, Xiongtao Sun, Yurong Hao, Guowei Guan, Wenjie Li, Longtao Huang, Wei Yang Bryan Lim
-Media: ![Project One preview](./assets/dualtap.png)
+Media: ![DualTAP mobile task execution and privacy protection demonstration](./DualTAP/media/promo-30s.mp4)
 Note: [[Website]](https://fyzhang1.github.io/DualTAP/)
 
 ## Oblivionis: A Lightweight Learning and Unlearning Framework for Federated Large Language Models
